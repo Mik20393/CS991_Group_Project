@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NotesPage"
+    android:background="#82A7FF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/notes_page_title"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:gravity="center"
+            android:text="@string/book_title"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/notes_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/notes"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/date1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/date_placeholder1"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/note_text1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/note_text" />
+
+        <TextView
+            android:id="@+id/date2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/date_placeholder2"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/note_text2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/note_text" />
+
+        <TextView
+            android:id="@+id/date3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/date_placeholder3"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/note_text3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/note_text" />
+
+        <TextView
+            android:id="@+id/date4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/date_placeholder"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/note_text4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/note_text" />
+
+    </LinearLayout>
+</ScrollView>
