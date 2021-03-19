@@ -37,7 +37,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:ems="10"
-        android:hint="@string/Enter_search"
+        android:hint="Author/Title"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toStartOf="@+id/search_btn"
         app:layout_constraintHorizontal_bias="0.5"
@@ -64,9 +64,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="54dp"
         android:text="@string/reminder_button"
-        app:layout_constraintEnd_toStartOf="@+id/current_books_button"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/view_library_button"
         app:layout_constraintTop_toBottomOf="@+id/current_book" />
 
     <Button
@@ -156,8 +154,8 @@
 
     <Button
         android:id="@+id/add_note_main"
-        android:layout_width="106dp"
-        android:layout_height="68dp"
+        android:layout_width="102dp"
+        android:layout_height="57dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
@@ -167,24 +165,20 @@
 
     <Button
         android:id="@+id/view_notes_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_width="103dp"
+        android:layout_height="57dp"
         android:layout_marginTop="16dp"
         android:text="@string/view_current_notes"
-        app:layout_constraintStart_toEndOf="@+id/current_book"
+        app:layout_constraintEnd_toEndOf="@+id/add_note_main"
         app:layout_constraintTop_toBottomOf="@+id/add_note_main" />
 
     <Button
         android:id="@+id/set_page_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:text="@string/set_page"
-        app:layout_constraintStart_toEndOf="@+id/current_book"
+        app:layout_constraintEnd_toEndOf="@+id/view_notes_btn"
         app:layout_constraintTop_toBottomOf="@+id/view_notes_btn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

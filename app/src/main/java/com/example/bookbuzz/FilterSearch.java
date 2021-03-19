@@ -26,7 +26,7 @@ public class FilterSearch extends AppCompatActivity {
     }
 
     public void showSearchResults(){
-        Intent intent = new Intent(this, SearchResults.class);
-        startActivity(intent);
+        Intent searchResultIntent = new Intent(this, SearchResults.class);
+        startActivity(searchResultIntent);
     }
 }
