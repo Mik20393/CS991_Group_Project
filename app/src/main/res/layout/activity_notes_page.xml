@@ -2,10 +2,11 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/input"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NotesPage"
-    android:background="#82A7FF">
+    android:background="#82A7FF"
+    tools:context=".NotesPage">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -30,59 +31,78 @@
 
         <TextView
             android:id="@+id/date1"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="150dp"
+            android:layout_marginRight="150dp"
             android:text="@string/date_placeholder1"
             android:textStyle="bold" />
 
-        <TextView
+        <EditText
             android:id="@+id/note_text1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="382dp"
+            android:layout_height="191dp"
             android:gravity="center"
             android:text="@string/note_text" />
 
         <TextView
             android:id="@+id/date2"
-            android:layout_width="match_parent"
+            android:layout_width="71dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="150dp"
+            android:layout_marginRight="150dp"
             android:text="@string/date_placeholder2"
             android:textStyle="bold" />
 
-        <TextView
+        <EditText
             android:id="@+id/note_text2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="215dp"
+            android:layout_marginTop="15dp"
             android:gravity="center"
             android:text="@string/note_text" />
 
         <TextView
             android:id="@+id/date3"
-            android:layout_width="match_parent"
+            android:layout_width="74dp"
             android:layout_height="wrap_content"
-            android:text="@string/date_placeholder3"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="150dp"
+            android:text="10/10/21"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/note_text3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/note_text" />
+        <EditText
+                    android:id="@+id/note_text3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:text="@string/note_text" />
 
         <TextView
             android:id="@+id/date4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="88dp"
+            android:layout_height="18dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="150dp"
             android:text="@string/date_placeholder"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/note_text4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/note_text" />
+                <EditText
+                    android:id="@+id/note_text4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:text="@string/note_text" />
 
     </LinearLayout>
 </ScrollView>

@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BookBuzz">
-        <activity android:name=".AddNewBook"/>
+        <activity android:name=".AddNewBook" />
         <activity android:name=".NotesPage" />
         <activity android:name=".AddNote" />
         <activity android:name=".MainActivity">
