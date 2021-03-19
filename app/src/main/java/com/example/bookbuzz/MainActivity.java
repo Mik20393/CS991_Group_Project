@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         addNote = findViewById(R.id.add_note_main);
         viewNotes = findViewById(R.id.view_notes_btn);
         filter_search = findViewById(R.id.filter_search_btn2);
+        setCurrentBook();
 
         search.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,6 +86,12 @@ public class MainActivity extends AppCompatActivity {
     public void filterSearch(){
         Intent intent = new Intent(this, FilterSearch.class);
         startActivity(intent);
+    }
+
+    public void setCurrentBook() {
+        BookBuzzDataModel currentBook = new BookBuzzDataModel("Duglas Adams", "ISIN-234566");
+        DataUtility.addABook(currentBook);
+        DataUtility.setCurrentBook(currentBook);
     }
 
 
