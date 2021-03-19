@@ -1,4 +1,7 @@
 <resources>
+    <string name="read_check">Read</string>
+    <string name="reading_check">Reading</string>
+    <string name="want_check">Want to read:</string>
     <string name="add_by_barcode">Scan barcode</string>
     <string name="add_manually">Add manually</string>
     <string name="find_book_label">Find Book:</string>
@@ -69,5 +72,14 @@
         <item>Title</item>
         <item>Year</item>
         <item>Publisher</item>
+    </string-array>
+    <string-array name="library">
+        <item>The Hitchhikers Guide</item>
+        <item>The Restaurant at the End</item>
+    </string-array>
+
+    <string-array name="description">
+        <item>Douglas Adams</item>
+        <item>Douglas Adams</item>
     </string-array>
 </resources>

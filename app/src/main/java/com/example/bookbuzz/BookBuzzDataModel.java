@@ -6,6 +6,7 @@ import java.util.List;
 public class BookBuzzDataModel {
     private String isbn;
     private String currentBookName;
+    private int image;
     private List<String> notes;
 
     public BookBuzzDataModel(final String bookName, final String bookIsbn) {
@@ -13,7 +14,12 @@ public class BookBuzzDataModel {
         this.isbn = bookIsbn;
         notes = new ArrayList<>();
     }
-
+    public int getImage() {
+        return image;
+    }
+    public void setImage(int drawable) {
+        this.image = drawable;
+    }
     public String getIsbn() {
         return isbn;
     }
