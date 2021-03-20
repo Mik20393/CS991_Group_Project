@@ -6,7 +6,7 @@ import java.util.List;
 public class BookBuzzDataModel {
     private String isbn;
     private String currentBookName;
-    private List<String> notes;
+    private List<NoteModel> notes;
 
     public BookBuzzDataModel(final String bookName, final String bookIsbn) {
         this.currentBookName = bookName;
@@ -30,11 +30,11 @@ public class BookBuzzDataModel {
         this.currentBookName = currentBookName;
     }
 
-    public List<String> getNotes() {
+    public List<NoteModel> getNotes() {
         return notes;
     }
 
-    public void setNotes(List<String> notes) {
+    public void setNotes(List<NoteModel> notes) {
         this.notes = notes;
     }
 }

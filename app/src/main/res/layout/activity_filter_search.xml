@@ -17,8 +17,6 @@
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/author_prompt"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
@@ -31,8 +29,6 @@
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/title_prompt"
         app:layout_constraintTop_toBottomOf="@+id/enter_author" />
 
     <EditText
@@ -45,8 +41,6 @@
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/genre_prompt"
         app:layout_constraintTop_toBottomOf="@+id/enter_title" />
 
     <EditText
@@ -59,8 +53,6 @@
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/year_prompt"
         app:layout_constraintTop_toBottomOf="@+id/enter_genre" />
 
     <EditText
@@ -73,8 +65,6 @@
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/subject_prompt"
         app:layout_constraintTop_toBottomOf="@+id/enter_year" />
 
     <EditText
@@ -87,90 +77,87 @@
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/fiction_prompt"
         app:layout_constraintTop_toBottomOf="@+id/enter_subject" />
 
     <TextView
         android:id="@+id/author_prompt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:text="@string/enter_author"
+        android:textSize="17sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/enter_author"
-        app:layout_constraintEnd_toStartOf="@+id/enter_author"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/title_prompt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:text="@string/enter_title"
+        android:textSize="17sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/enter_title"
-        app:layout_constraintEnd_toStartOf="@+id/enter_title"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/genre_prompt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:text="@string/enter_genre"
+        android:textSize="17sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/enter_genre"
-        app:layout_constraintEnd_toStartOf="@+id/enter_genre"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/year_prompt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:text="@string/enter_year"
+        android:textSize="17sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/enter_year"
-        app:layout_constraintEnd_toStartOf="@+id/enter_year"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/subject_prompt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:text="@string/enter_subject"
+        android:textSize="17sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/enter_subject"
-        app:layout_constraintEnd_toStartOf="@+id/enter_subject"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/fiction_prompt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:text="@string/enter_fiction"
+        android:textSize="17sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/enter_fiction"
-        app:layout_constraintEnd_toStartOf="@+id/enter_fiction"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/search_btn2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:text="@string/search_btn"
         app:layout_constraintEnd_toEndOf="@+id/enter_fiction"
         app:layout_constraintTop_toBottomOf="@+id/enter_fiction" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="5dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

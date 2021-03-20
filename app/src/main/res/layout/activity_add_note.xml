@@ -31,19 +31,22 @@
 
     <EditText
         android:id="@+id/note_entry_text"
+        style="@style/Widget.AppCompat.Light.AutoCompleteTextView"
         android:layout_width="342dp"
         android:layout_height="332dp"
         android:layout_marginTop="150dp"
         android:layout_marginBottom="200dp"
+        android:background="@android:color/transparent"
         android:ems="10"
         android:gravity="start|top"
         android:hint="Enter Note"
         android:inputType="textMultiLine"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.117" />
+        app:layout_constraintVertical_bias="0.204" />
 
     <Button
         android:id="@+id/clear_button"

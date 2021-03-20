@@ -25,7 +25,7 @@ public class AddNewBook extends AppCompatActivity {
     }
 
     public void displaySearchResults(){
-        Intent intent = new Intent(this, SearchResults.class);
-        startActivity(intent);
+        Intent displayResultintent = new Intent(this, SearchResults.class);
+        startActivity(displayResultintent);
     }
 }

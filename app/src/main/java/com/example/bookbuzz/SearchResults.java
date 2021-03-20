@@ -9,8 +9,8 @@ import android.widget.Toast;
 
 public class SearchResults extends AppCompatActivity {
 
-    Button add1;
-    Button add2;
+    Button addBook1;
+    Button addBook2;
 
 
     @Override
@@ -18,17 +18,17 @@ public class SearchResults extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_results);
 
-        add1 = findViewById(R.id.addbtn1);
-        add2 = findViewById(R.id.addbtn2);
+        addBook1 = findViewById(R.id.addbtn1);
+        addBook2 = findViewById(R.id.addbtn2);
 
-        add1.setOnClickListener(new View.OnClickListener() {
+        addBook1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(SearchResults.this, "Book added to Library", Toast.LENGTH_LONG).show();
             }
         });
 
-        add2.setOnClickListener(new View.OnClickListener() {
+        addBook2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(SearchResults.this, "Book added to Library", Toast.LENGTH_LONG).show();

@@ -9,6 +9,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.text.DateFormat;
+import java.util.Calendar;
+
 public class AddNote extends AppCompatActivity {
 
     @Override
@@ -23,13 +26,16 @@ public class AddNote extends AppCompatActivity {
     private void initializedListner() {
         Button saveButton = findViewById(R.id.save_note_button);
         EditText enterText = findViewById(R.id.note_entry_text);
+        Calendar calendar = Calendar.getInstance();
+        String currentDate = DateFormat.getDateInstance().format(calendar.getTime());
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Log.i("on save", "clicking note save");
+                String userNote = enterText.getText().toString();
+                NoteModel currentNote = new NoteModel(currentDate, userNote);
                 BookBuzzDataModel currentbook = DataUtility.getCurrentBook();
-                String noteToBeAdded = enterText.getText().toString();
-                currentbook.getNotes().add(noteToBeAdded);
+                currentbook.getNotes().add(currentNote);
             }
         });
     }

@@ -64,28 +64,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void goToSearchPage(){
-        Intent intent = new Intent(this, SearchResults.class);
-        startActivity(intent);
+        Intent searchPageIntent = new Intent(this, SearchResults.class);
+        startActivity(searchPageIntent);
     }
 
     public void createNewBook(){
-        Intent intent = new Intent(this, AddNewBook.class);
-        startActivity(intent);
+        Intent craeteBookIntent = new Intent(this, AddNewBook.class);
+        startActivity(craeteBookIntent);
     }
 
     public void createNewNote(){
-        Intent intent = new Intent(this, AddNote.class);
-        startActivity(intent);
+        Intent createNoteIntent = new Intent(this, AddNote.class);
+        startActivity(createNoteIntent);
     }
 
     public void goToNotes(){
-        Intent intent = new Intent(this, NotesPage.class);
-        startActivity(intent);
+        Intent viewNotePageIntent = new Intent(this, ViewNotes.class);
+        startActivity(viewNotePageIntent);
     }
 
     public void filterSearch(){
-        Intent intent = new Intent(this, FilterSearch.class);
-        startActivity(intent);
+        Intent filterSearchIntent = new Intent(this, FilterSearch.class);
+        startActivity(filterSearchIntent);
     }
 
     public void setCurrentBook() {
