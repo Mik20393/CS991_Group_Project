@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_book_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BookBuzz">
-        <activity android:name=".ViewNotes"></activity>
+        <activity android:name=".Reminder"></activity>
+        <activity android:name=".ViewNotes" />
         <activity android:name=".AddNewBook" />
         <activity android:name=".NotesPage" />
         <activity android:name=".AddNote" />
@@ -22,6 +23,7 @@
         </activity>
         <activity android:name=".FilterSearch" />
         <activity android:name=".SearchResults" />
+        <receiver android:name=".AlertReceiver"/>
     </application>
 
 </manifest>

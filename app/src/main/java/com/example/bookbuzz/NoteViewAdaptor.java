@@ -15,8 +15,8 @@ import java.util.List;
 
 public class NoteViewAdaptor extends RecyclerView.Adapter<NoteViewAdaptor.NoteViewHolder> {
 
-    private Context context;
-    private List<NoteModel> currentBookNotes;
+    private Context context; // initialize variable of type Context
+    private List<NoteModel> currentBookNotes; //initialize the list of current booka notes.
 
     public NoteViewAdaptor(Context context, List<NoteModel> currentBookNotes) {
         this.context =context;
@@ -37,10 +37,15 @@ public class NoteViewAdaptor extends RecyclerView.Adapter<NoteViewAdaptor.NoteVi
     public void onBindViewHolder(@NonNull NoteViewHolder holder, int position) {
         String date = currentBookNotes.get(position).getNoteDate();
         String text = currentBookNotes.get(position).getNoteText();
+        String toInsertText = text + "\n";
         holder.dateTextView.setText(date);
-        holder.noteTextView.setText(text);
+        holder.noteTextView.setText(toInsertText);
     }
 
+    /***
+     * method will count of books notes.
+     * @return number of book notes.
+     */
     @Override
     public int getItemCount() {
         return currentBookNotes.size();

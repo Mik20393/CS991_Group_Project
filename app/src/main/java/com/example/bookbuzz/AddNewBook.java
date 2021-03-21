@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+/***
+ * This class is used to start activity to add book.
+ */
 public class AddNewBook extends AppCompatActivity {
 
     private Button search;
@@ -24,8 +27,11 @@ public class AddNewBook extends AppCompatActivity {
         });
     }
 
+    /***
+     * Method to use to intent(start) another activity.
+     */
     public void displaySearchResults(){
-        Intent displayResultintent = new Intent(this, SearchResults.class);
-        startActivity(displayResultintent);
+        Intent displayResultIntent = new Intent(this, SearchResults.class);
+        startActivity(displayResultIntent);
     }
 }

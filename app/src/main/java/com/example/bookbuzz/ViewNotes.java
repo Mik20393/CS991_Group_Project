@@ -4,13 +4,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ViewNotes extends AppCompatActivity {
+    Button homeButton;
+    Button viewLibrary;
+    Button addNote;
 
     RecyclerView recyclerView;
     @Override
@@ -28,5 +34,34 @@ public class ViewNotes extends AppCompatActivity {
         recyclerView.setAdapter(noteViewAdaptor);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         noteViewAdaptor.notifyDataSetChanged();
+
+        homeButton = findViewById(R.id.homeFromViewNoteButton);
+        homeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent homeButtonIntent = new Intent(ViewNotes.this, MainActivity.class);
+                startActivity(homeButtonIntent);
+            }
+        });
+
+//        viewLibrary = findViewById(R.id.myLibraryFromNotebutton2);
+//        viewLibrary.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent viewLibraryButtonIntent = new Intent(ViewNotes.this, MainActivity.class);
+//                startActivity(viewLibraryButtonIntent);
+//            }
+//        });
+
+
+        addNote = findViewById(R.id.addNoteFromViewNoteButton3);
+        addNote.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent addNoteButtonIntent = new Intent(ViewNotes.this, AddNote.class);
+                startActivity(addNoteButtonIntent);
+            }
+        });
+
     }
 }

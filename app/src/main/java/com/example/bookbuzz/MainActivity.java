@@ -2,6 +2,7 @@ package com.example.bookbuzz;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Notification;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -14,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private Button addNewBook;
     private Button addNote;
     private Button viewNotes;
+    private Button setReminder;
     private TextView filter_search;
 
     @Override
@@ -25,7 +27,16 @@ public class MainActivity extends AppCompatActivity {
         addNote = findViewById(R.id.add_note_main);
         viewNotes = findViewById(R.id.view_notes_btn);
         filter_search = findViewById(R.id.filter_search_btn2);
+        setReminder = findViewById(R.id.set_reminder_button);
         setCurrentBook();
+
+        setReminder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent setReminderIntent = new Intent(MainActivity.this, Reminder.class);
+                startActivity(setReminderIntent);
+            }
+        });
 
         search.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,8 +80,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void createNewBook(){
-        Intent craeteBookIntent = new Intent(this, AddNewBook.class);
-        startActivity(craeteBookIntent);
+        Intent createBookIntent = new Intent(this, AddNewBook.class);
+        startActivity(createBookIntent);
     }
 
     public void createNewNote(){
