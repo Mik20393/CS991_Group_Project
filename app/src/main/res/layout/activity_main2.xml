@@ -118,39 +118,13 @@
 
     <ImageView
         android:id="@+id/current_book"
-        android:layout_width="136dp"
-        android:layout_height="215dp"
+        android:layout_width="168dp"
+        android:layout_height="217dp"
         android:layout_marginTop="16dp"
         android:src="@drawable/life_the_universe_and_everything"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.448"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <ImageView
-        android:id="@+id/prev_book"
-        android:layout_width="100dp"
-        android:layout_height="165dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="33dp"
-        android:layout_marginRight="33dp"
-        android:src="@drawable/restaurant_at_the_end_of_the_universe"
-        app:layout_constraintEnd_toStartOf="@+id/current_book"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="58dp"
-        android:layout_marginRight="58dp"
-        android:text="@string/last_book"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toStartOf="@+id/current_book"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button

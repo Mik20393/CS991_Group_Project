@@ -24,34 +24,37 @@
     <EditText
         android:id="@+id/add_book_search"
         android:layout_width="214dp"
-        android:layout_height="37dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="25dp"
         android:ems="10"
         android:hint="@string/find_book_hint"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/add_book_title" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <Spinner
         android:id="@+id/findBookSpinner"
         android:layout_width="115dp"
         android:layout_height="47dp"
-        android:layout_marginTop="108dp"
+        app:layout_constraintBottom_toBottomOf="@+id/add_book_search"
         app:layout_constraintEnd_toStartOf="@+id/search_btn_add_book"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/add_book_search"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/add_book_search"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageButton
         android:id="@+id/search_btn_add_book"
         android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_marginTop="112dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/findBookSpinner"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/findBookSpinner"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@android:drawable/ic_menu_search" />
 
     <TextView
@@ -70,21 +73,21 @@
     <Button
         android:id="@+id/scanBarcode"
         android:layout_width="145dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="120dp"
         android:text="@string/add_by_barcode"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/add_book_search" />
 
     <Button
         android:id="@+id/addManually"
-        android:layout_width="152dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="172dp"
+        android:layout_width="145dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="204dp"
         android:text="@string/add_manually"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/scanBarcode" />
