@@ -1,8 +1,16 @@
 <resources>
+    <string name="read_check">Read</string>
+    <string name="reading_check">Reading</string>
+    <string name="want_check">Want to read:</string>
+    <string name="add_by_barcode">Scan barcode</string>
+    <string name="add_manually">Add manually</string>
+    <string name="find_book_label">Find Book:</string>
+    <string name="find_book_hint">Search our database</string>
     <string name="app_name">Book Buzz</string>
     <string name="search_btn">Search</string>
     <string name="Enter_search">Enter Search</string>
     <string name="filter_search">Filter Search</string>
+    <string name="add_book_btn">Add Book</string>
     <string name="enter_author">Search by author</string>
     <string name="enter_title">Search by title</string>
     <string name="enter_genre">Search by genre</string>
@@ -59,4 +67,19 @@
     <string name="optional_details">Optional Details</string>
     <string name="genre">Genre:</string>
     <string name="Enter_genre">Book genre</string>
+    <string-array name="find_book_spinner">
+        <item>Genre</item>
+        <item>Title</item>
+        <item>Year</item>
+        <item>Publisher</item>
+    </string-array>
+    <string-array name="library">
+        <item>The Hitchhikers Guide</item>
+        <item>The Restaurant at the End</item>
+    </string-array>
+
+    <string-array name="description">
+        <item>Douglas Adams</item>
+        <item>Douglas Adams</item>
+    </string-array>
 </resources>

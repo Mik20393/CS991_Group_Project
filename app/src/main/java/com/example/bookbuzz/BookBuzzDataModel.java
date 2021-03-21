@@ -10,6 +10,8 @@ public class BookBuzzDataModel {
     private String isbn;
     private String currentBookName;
     private List<NoteModel> notes;
+    private int image;
+    private List<String> notes;
 
     public BookBuzzDataModel(final String bookName, final String bookIsbn) {
         this.currentBookName = bookName;
@@ -21,6 +23,12 @@ public class BookBuzzDataModel {
      * Funtion used to get ISBN of book
      * @return ISBN of type string.
      */
+    public int getImage() {
+        return image;
+    }
+    public void setImage(int drawable) {
+        this.image = drawable;
+    }
     public String getIsbn() {
         return isbn;
     }
