@@ -11,7 +11,7 @@ public class BookBuzzDataModel {
     private String currentBookName;
     private List<NoteModel> notes;
     private int image;
-    private List<String> notes;
+//    private List<String> notes;
 
     public BookBuzzDataModel(final String bookName, final String bookIsbn) {
         this.currentBookName = bookName;
