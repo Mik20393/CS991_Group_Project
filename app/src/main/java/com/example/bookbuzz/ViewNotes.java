@@ -44,14 +44,14 @@ public class ViewNotes extends AppCompatActivity {
             }
         });
 
-//        viewLibrary = findViewById(R.id.myLibraryFromNotebutton2);
-//        viewLibrary.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent viewLibraryButtonIntent = new Intent(ViewNotes.this, MainActivity.class);
-//                startActivity(viewLibraryButtonIntent);
-//            }
-//        });
+        viewLibrary = findViewById(R.id.myLibraryFromNotebutton2);
+        viewLibrary.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent viewLibraryButtonIntent = new Intent(ViewNotes.this, ViewLibrary.class);
+                startActivity(viewLibraryButtonIntent);
+            }
+        });
 
 
         addNote = findViewById(R.id.addNoteFromViewNoteButton3);

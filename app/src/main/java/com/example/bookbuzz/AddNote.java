@@ -37,6 +37,15 @@ public class AddNote extends AppCompatActivity {
             }
         });
 
+        Button viewLibrary = findViewById(R.id.myLibraryButton);
+        viewLibrary.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent viewnoteIntent = new Intent(AddNote.this, ViewLibrary.class);
+                startActivity(viewnoteIntent);
+            }
+        });
+
         Button viewNote = findViewById(R.id.viewNoteButton2);
         viewNote.setOnClickListener(new View.OnClickListener() {
             @Override
