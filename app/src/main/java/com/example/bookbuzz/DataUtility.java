@@ -1,5 +1,9 @@
 package com.example.bookbuzz;
 
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -63,5 +67,16 @@ public class DataUtility {
         }
         return images;
     }
+    public static void removeBook(String isbn) {
+        books.remove(isbn);
+    }
+
+
+    public static void setStatus(String isbn, String status) {
+
+        books.get(isbn).setStatus(status);
+    }
+
+
 }
 

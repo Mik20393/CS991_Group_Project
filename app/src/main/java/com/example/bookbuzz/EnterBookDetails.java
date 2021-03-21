@@ -45,10 +45,18 @@ public class EnterBookDetails extends AppCompatActivity {
     }
 
     public void addBook() {
+
         BookBuzzDataModel addedBook = new BookBuzzDataModel((enter_book_name.getText().toString()), enter_author_name.getText().toString());
         addedBook.setImage(R.drawable.hitchhikers_guide);
         DataUtility.addABook(addedBook);
-        Intent intent = new Intent(this, ViewLibrary.class);
+        openSetStatus();
+    }
+
+    public void openSetStatus() {
+
+        String isbn = enter_author_name.getText().toString();
+        Intent intent = new Intent(this, SetStatus.class);
+        intent.putExtra("isbn", isbn);
         startActivity(intent);
     }
 }

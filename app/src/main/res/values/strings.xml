@@ -82,4 +82,9 @@
         <item>Douglas Adams</item>
         <item>Douglas Adams</item>
     </string-array>
+    <string name="remove_button">Remove Book</string>
+    <string name="edit_button">Edit Book</string>
+    <string name="view_notes">View Notes</string>
+    <string name="isbn_hint">ISBN</string>
+    <string name="optional_label_ed">Optional:</string>
 </resources>
