@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView filter_search;
     private TextView currentBookTitle;
     private Button view_library;
+    private Button view_history;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
         setReminder = findViewById(R.id.set_reminder_button);
         view_library = findViewById(R.id.view_library_button);
+        view_history = findViewById(R.id.view_read_history_button);
 
         setCurrentBook();
         createUserLibrary();
@@ -77,6 +79,10 @@ public class MainActivity extends AppCompatActivity {
                 viewLibrary();
             }
         });
+        view_history.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {viewHistory();}
+        });
     }
 
     public void goToSearchPage(){
@@ -109,6 +115,11 @@ public class MainActivity extends AppCompatActivity {
     }
     public void viewLibrary() {
         Intent intent = new Intent(this, ViewLibrary.class);
+        startActivity(intent);
+    }
+
+    public void viewHistory() {
+        Intent intent = new Intent(this, ReadHistory.class);
         startActivity(intent);
     }
 

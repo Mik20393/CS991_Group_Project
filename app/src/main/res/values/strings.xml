@@ -18,10 +18,10 @@
     <string name="enter_subject">Search by subject</string>
     <string name="enter_fiction">Fiction or non-fiction</string>
     <string name="Enter_search1">Search</string>
-    <string name="title1">HitchHikers Guide To The Galaxy</string>
-    <string name="author">Author:Douglas Adams</string>
+    <string name="title1">The Hitchhikers Guide To The Galaxy</string>
+    <string name="author">Author: Douglas Adams</string>
     <string name="title2">The Restaurant At The End Of The Universe</string>
-    <string name="title3">Life The Universe And Everything</string>
+    <string name="title3">Life, The Universe And Everything</string>
     <string name="fiction">Fiction</string>
     <string name="recommendations">Books related to your search</string>
     <string name="rating1">Rated: 4/5</string>
@@ -62,7 +62,7 @@
     <string name="no_of_pages">Pages:</string>
     <string name="Enter_title">Book Title</string>
     <string name="Enter_author">Author</string>
-    <string name="pages">No of pages</string>
+    <string name="pages">No. of pages</string>
     <string name="upload_btn">Upload Cover Art</string>
     <string name="optional_details">Optional Details</string>
     <string name="genre">Genre:</string>
@@ -95,5 +95,12 @@
     <string name="published_label_vb">Published:</string>
     <string name="status_label_vb">Status:</string>
     <string name="isbn_label_vb">ISBN:</string>
+    <string name="view_read_history">View Read History</string>
+    <!--strings for the read history-->
+    <string name="read_history">Your read history</string>
+    <string name="read_history_subtitle">Touch a book cover or title to view notes and details</string>
+    <string name="start_date1">Started on: 01/01/2021</string>
+    <string name="finish_date1">Finished on: 02/02/2021</string>
+    <string name="your_rating">Your rating:</string>
 
 </resources>

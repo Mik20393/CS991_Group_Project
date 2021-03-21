@@ -16,6 +16,24 @@ public class BookBuzzDataModel {
     private String pages;
     private List<NoteModel> notes;
     private int image;
+    private String status;
+    private String bookmark;
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getBookmark() {
+        return bookmark;
+    }
+
+    public void setBookmark(String bookmark) {
+        this.bookmark = bookmark;
+    }
 //    private List<String> notes;
 
     public BookBuzzDataModel(final String bookName, final String bookIsbn) {

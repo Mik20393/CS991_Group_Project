@@ -9,14 +9,14 @@
         android:roundIcon="@mipmap/ic_book_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BookBuzz">
-        <activity android:name=".ViewLibrary"/>
-        <activity android:name=".Reminder"/>
+        <activity android:name=".ReadHistory"></activity>
+        <activity android:name=".ViewLibrary" />
+        <activity android:name=".Reminder" />
         <activity android:name=".ViewNotes" />
         <activity android:name=".AddNewBook" />
         <activity android:name=".NotesPage" />
         <activity android:name=".EnterBookDetails" />
         <activity android:name=".AddNote" />
-
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,10 +26,13 @@
         </activity>
         <activity android:name=".FilterSearch" />
         <activity android:name=".SearchResults" />
-        <receiver android:name=".AlertReceiver"/>
-        <activity android:name=".ViewBook"
-            android:parentActivityName=".ViewLibrary"/>
-        <activity android:name=".SetStatus"/>
+
+        <receiver android:name=".AlertReceiver" />
+
+        <activity
+            android:name=".ViewBook"
+            android:parentActivityName=".ViewLibrary" />
+        <activity android:name=".SetStatus" />
     </application>
 
 </manifest>
