@@ -64,6 +64,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="54dp"
+        android:text="@string/reminder_button"
         app:layout_constraintStart_toStartOf="@+id/view_library_button"
         app:layout_constraintTop_toBottomOf="@+id/current_book" />
 
@@ -154,5 +155,15 @@
         android:text="@string/set_page"
         app:layout_constraintEnd_toEndOf="@+id/view_notes_btn"
         app:layout_constraintTop_toBottomOf="@+id/view_notes_btn" />
+
+    <Button
+        android:id="@+id/view_read_history_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/view_read_history"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_library_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
