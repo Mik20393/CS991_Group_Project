@@ -59,12 +59,12 @@ public class NoteViewAdaptor extends RecyclerView.Adapter<NoteViewAdaptor.NoteVi
             dateTextView = itemView.findViewById(R.id.textViewNoteDate);
             noteTextView = itemView.findViewById(R.id.textViewNoteText);
 
-            noteTextView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Toast.makeText(context, "Create Edit dialogs", Toast.LENGTH_SHORT).show();
-                }
-            });
+//            noteTextView.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    Toast.makeText(context, "Create Edit dialogs", Toast.LENGTH_SHORT).show();
+//                }
+//            });
         }
 
 
