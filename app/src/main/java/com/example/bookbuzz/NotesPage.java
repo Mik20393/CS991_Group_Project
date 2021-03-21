@@ -4,10 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.text.InputType;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.WindowInsets;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -19,38 +21,23 @@ public class NotesPage extends AppCompatActivity {
         setContentView(R.layout.activity_notes_page);
         EditText textView = findViewById(R.id.note_text1);
 
-        textView.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                if(motionEvent.ACTION_UP == motionEvent.getAction()) {
-                    textView.setText(textView.getText());
-                }
-                return true;
-            }
-        });
         String textTobeShow = textView.getText().toString();
 //        for (String note : DataUtility.getCurrentBook().getNotes()) {
-//            textTobeShow = textTobeShow + "\n" + "Current date" + System.currentTimeMillis() + note + "\n";
+//            textTobeShow = textTobeShow + "\n" + note + "\n";
 //        }
-//        textView.setText(textTobeShow);
-//        textView.setEnabled(false);
+        textView.setText(textTobeShow);
+        textView.setInputType(InputType.TYPE_NULL);
+        textView.setTextIsSelectable(true);
 
-//        textView.setOnHoverListener(new View.OnHoverListener() {
-//            @Override
-//            public boolean onHover(View view, MotionEvent motionEvent) {
-//                Log.i("in eHover", "in hoverlistner");
-//                textView.setEnabled(true);
-//                return true;
-//            }
-//        });
-
-//        textView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Log.i("in edit view", "in listner");
-//                textView.setEnabled(true);
-//            }
-//        });
+       
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.i("in edit view", "in listner");
+                textView.setInputType(InputType.TYPE_CLASS_TEXT);
+                textView.setTextIsSelectable(false);
+            }
+        });
 //
 //        textView.setOnKeyListener(new View.OnKeyListener() {
 //            @Override
