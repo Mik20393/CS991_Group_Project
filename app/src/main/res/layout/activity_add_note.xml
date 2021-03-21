@@ -25,25 +25,30 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="3dp"
         android:text="@string/book_title"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/add_note_title" />
 
     <EditText
         android:id="@+id/note_entry_text"
+        style="@style/Widget.AppCompat.Light.AutoCompleteTextView"
         android:layout_width="342dp"
         android:layout_height="332dp"
         android:layout_marginTop="150dp"
         android:layout_marginBottom="200dp"
+        android:background="@android:color/transparent"
         android:ems="10"
         android:gravity="start|top"
         android:hint="Enter Note"
         android:inputType="textMultiLine"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.117" />
+        app:layout_constraintVertical_bias="0.204" />
 
     <Button
         android:id="@+id/clear_button"
@@ -53,7 +58,7 @@
         android:layout_marginRight="20dp"
         android:layout_marginBottom="20dp"
         android:text="CLEAR"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintBottom_toTopOf="@+id/viewNoteButton2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/note_entry_text" />
 
@@ -65,29 +70,29 @@
         android:layout_marginRight="20dp"
         android:layout_marginBottom="20dp"
         android:text="Save"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintBottom_toTopOf="@+id/viewNoteButton2"
         app:layout_constraintEnd_toStartOf="@+id/clear_button"
         app:layout_constraintTop_toBottomOf="@+id/note_entry_text" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/homeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginBottom="20dp"
         android:text="Home"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/viewNoteButton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:layout_marginBottom="20dp"
-        android:text="Back"
+        android:text="View Note"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -107,9 +112,9 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="20dp"
-        android:text="My Library"
+        android:text="View Library"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
-        app:layout_constraintStart_toEndOf="@+id/button" />
+        app:layout_constraintEnd_toStartOf="@+id/viewNoteButton2"
+        app:layout_constraintStart_toEndOf="@+id/homeButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

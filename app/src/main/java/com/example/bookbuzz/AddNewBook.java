@@ -10,6 +10,9 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 
+/***
+ * This class is used to start activity to add book.
+ */
 public class AddNewBook extends AppCompatActivity {
     public static final String EXTRA_IDENTITY = "com.example.bookbuzz.example.EXTRA_IDENTITY";
 
@@ -46,9 +49,12 @@ public class AddNewBook extends AppCompatActivity {
 
     }
 
+    /***
+     * Method to use to intent(start) another activity.
+     */
     public void displaySearchResults(){
-        Intent intent = new Intent(this, SearchResults.class);
-        startActivity(intent);
+        Intent displayResultIntent = new Intent(this, SearchResults.class);
+        startActivity(displayResultIntent);
     }
     public void openEnterBookDetails(){
 
