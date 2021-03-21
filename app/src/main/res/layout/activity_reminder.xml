@@ -19,26 +19,30 @@
     <DatePicker
         android:id="@+id/reminderTime"
         android:layout_width="300dp"
-        android:layout_height="342dp"/>
+        android:layout_height="365dp"
+        android:layout_marginBottom="10dp"/>
 
     <LinearLayout
         android:id="@+id/linerarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:gravity="center_horizontal"
-        android:layout_marginTop="50dp">
+        android:orientation="vertical">
+
         <Button
             android:id="@+id/setButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="set"/>
+            android:text="set"
+            android:layout_marginBottom="10dp"/>
+
+        <Button
+            android:id="@+id/homeBackButton2"
+            android:layout_width="108dp"
+            android:layout_height="wrap_content"
+            android:text="Home" />
 
     </LinearLayout>
-
-    <Button
-        android:id="@+id/homeBackButton2"
-        android:layout_width="108dp"
-        android:layout_height="wrap_content"
-        android:text="Home" />
 
 </LinearLayout>
