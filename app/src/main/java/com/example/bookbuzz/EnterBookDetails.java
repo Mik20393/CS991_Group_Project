@@ -12,7 +12,14 @@ public class EnterBookDetails extends AppCompatActivity {
 
     EditText enter_author_name;
     EditText enter_book_name;
+    EditText page_number_entry;
+    EditText isbn_entry;
+    EditText genre_entry;
+    EditText year_entry;
     Button addBook;
+    Button home;
+    Button viewLibrary;
+    Button setReminder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,8 +28,17 @@ public class EnterBookDetails extends AppCompatActivity {
 
         enter_author_name = findViewById(R.id.enter_author_name);
         enter_book_name = findViewById(R.id.enter_book_name);
-
+        page_number_entry = findViewById(R.id.page_number_entry);
+        isbn_entry = findViewById(R.id.isbn_entry);
+        year_entry = findViewById(R.id.year_entry);
+        genre_entry = findViewById(R.id.genre_entry);
         addBook = findViewById(R.id.addBookButton);
+        home = findViewById(R.id.home_ed);
+        viewLibrary = findViewById(R.id.view_library_ed);
+        setReminder = findViewById(R.id.set_reminder_ed);
+
+
+
 
         Intent intent = getIntent();
         String identity = intent.getStringExtra("identity");
@@ -42,11 +58,35 @@ public class EnterBookDetails extends AppCompatActivity {
             }
         });
 
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openHome();
+            }
+        });
+        viewLibrary.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openViewLibrary();
+            }
+        });
+        setReminder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openSetReminder();
+            }
+        });
+
     }
 
     public void addBook() {
 
-        BookBuzzDataModel addedBook = new BookBuzzDataModel((enter_book_name.getText().toString()), enter_author_name.getText().toString());
+
+
+        BookBuzzDataModel addedBook = new BookBuzzDataModel((enter_book_name.getText().toString()), isbn_entry.getText().toString());
+        addedBook.setGenre(genre_entry.getText().toString());
+        addedBook.setPages(page_number_entry.getText().toString());
+        addedBook.setYear(year_entry.getText().toString());
         addedBook.setImage(R.drawable.hitchhikers_guide);
         DataUtility.addABook(addedBook);
         openSetStatus();
@@ -54,10 +94,25 @@ public class EnterBookDetails extends AppCompatActivity {
 
     public void openSetStatus() {
 
-        String isbn = enter_author_name.getText().toString();
+        String isbn = isbn_entry.getText().toString();
         Intent intent = new Intent(this, SetStatus.class);
         intent.putExtra("isbn", isbn);
         startActivity(intent);
     }
+
+    public void openViewLibrary() {
+        Intent intent = new Intent(this, ViewLibrary.class);
+        startActivity(intent);
+    }
+    public void openHome() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+    public void openSetReminder() {
+        Intent intent = new Intent(this, Reminder.class);
+        startActivity(intent);
+    }
+
+
 }
 
