@@ -86,5 +86,14 @@
     <string name="edit_button">Edit Book</string>
     <string name="view_notes">View Notes</string>
     <string name="isbn_hint">ISBN</string>
+    <string name="genre_hint">Genre</string>
+    <string name="year_published_hint">Year Published</string>
     <string name="optional_label_ed">Optional:</string>
+    <string name="title_label_vb">Title:</string>
+    <string name="author_label_vb">Author:</string>
+    <string name="pages_label_vb">Pages:</string>
+    <string name="published_label_vb">Published:</string>
+    <string name="status_label_vb">Status:</string>
+    <string name="isbn_label_vb">ISBN:</string>
+
 </resources>

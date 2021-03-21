@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private Button viewNotes;
     private Button setReminder;
     private TextView filter_search;
+    private TextView currentBookTitle;
     private Button view_library;
 
     @Override
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         addNewBook = findViewById(R.id.add_new_book_button);
         addNote = findViewById(R.id.add_note_main);
         viewNotes = findViewById(R.id.view_notes_btn);
-        filter_search = findViewById(R.id.filter_search_btn2);
+
         setReminder = findViewById(R.id.set_reminder_button);
         view_library = findViewById(R.id.view_library_button);
 
@@ -70,12 +71,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        filter_search.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                filterSearch();
-            }
-        });
         view_library.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -104,10 +99,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(viewNotePageIntent);
     }
 
-    public void filterSearch(){
-        Intent filterSearchIntent = new Intent(this, FilterSearch.class);
-        startActivity(filterSearchIntent);
-    }
+
 
     public void setCurrentBook() {
         BookBuzzDataModel currentBook = new BookBuzzDataModel("Duglas Adams", "ISIN-234566");
@@ -132,5 +124,6 @@ public class MainActivity extends AppCompatActivity {
         DataUtility.addABook(book3);
 
     }
+
 
 }

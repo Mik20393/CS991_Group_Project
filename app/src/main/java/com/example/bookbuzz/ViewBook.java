@@ -17,7 +17,14 @@ public class ViewBook extends AppCompatActivity {
     Button removeBook;
     Button bookmark;
     TextView status;
+    TextView author;
+    TextView published;
+    TextView pages;
+    TextView bookISBN;
     EditText bookmarkPage;
+    Button viewLibrary;
+    Button home;
+    Button setReminder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +35,13 @@ public class ViewBook extends AppCompatActivity {
         bookPicture = findViewById(R.id.bookPicture);
         title = findViewById(R.id.title_txt_vb);
         status = findViewById(R.id.status_txt_vb);
+        author = findViewById(R.id.author_txt_vb);
+        published = findViewById(R.id.year_txt_vb);
+        pages = findViewById(R.id.pages_txt_vb);
+        bookISBN = findViewById(R.id.isbn_txt_vb);
+        home = findViewById(R.id.home__vb);
+        setReminder = findViewById(R.id.set_reminder_vb);
+        viewLibrary = findViewById(R.id.view_library_vb);
         bookmark = findViewById(R.id.bookmark_btn);
         bookmarkPage = findViewById(R.id.editBookmark);
         setBookDetails();
@@ -48,6 +62,25 @@ public class ViewBook extends AppCompatActivity {
             }
         });
 
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openHome();
+            }
+        });
+        viewLibrary.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openViewLibrary();
+            }
+        });
+        setReminder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openSetReminder();
+            }
+        });
+
     }
 
     private void setBookDetails() {
@@ -59,6 +92,9 @@ public class ViewBook extends AppCompatActivity {
         bookPicture.setImageResource(book.getImage());
         status.setText(book.getStatus());
         bookmarkPage.setText(book.getBookmark());
+        pages.setText(book.getPages());
+        author.setText(book.getPages());
+        bookISBN.setText(book.getIsbn());
     }
 
     private void removeBook() {
@@ -83,5 +119,21 @@ public class ViewBook extends AppCompatActivity {
         goBackToLibrary();
 
     }
+
+    public void openViewLibrary() {
+        Intent intent = new Intent(this, ViewLibrary.class);
+        startActivity(intent);
+    }
+
+    public void openHome() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void openSetReminder() {
+        Intent intent = new Intent(this, Reminder.class);
+        startActivity(intent);
+    }
+
 }
 

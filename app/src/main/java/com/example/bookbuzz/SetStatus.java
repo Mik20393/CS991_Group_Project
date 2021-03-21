@@ -49,7 +49,7 @@ public class SetStatus extends AppCompatActivity {
                 DataUtility.setStatus(isbn, toSet);
 
                 viewLibrary();
-                String check = DataUtility.getABookByIsbn(isbn).getStatus();
+
 
             }
         });

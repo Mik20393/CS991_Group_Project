@@ -9,15 +9,6 @@
 
 
     <TextView
-        android:id="@+id/filter_search_btn2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/filter_search"
-        android:textStyle="italic"
-        app:layout_constraintStart_toStartOf="@+id/main_search"
-        app:layout_constraintTop_toBottomOf="@+id/main_search" />
-
-    <TextView
         android:id="@+id/main_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -59,14 +50,13 @@
 
     <Button
         android:id="@+id/set_reminder_button"
-        android:layout_width="133dp"
-        android:layout_height="73dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="54dp"
+        android:layout_width="130dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
         android:text="@string/reminder_button"
-        app:layout_constraintStart_toStartOf="@+id/view_library_button"
-        app:layout_constraintTop_toBottomOf="@+id/current_book" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/current_books_button"
@@ -75,84 +65,90 @@
         android:layout_marginEnd="12dp"
         android:layout_marginRight="12dp"
         android:text="@string/set_current_book"
-        app:layout_constraintBaseline_toBaselineOf="@+id/set_reminder_button"
+        app:layout_constraintBottom_toTopOf="@+id/set_reminder_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/set_reminder_button" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/current_book"
+        app:layout_constraintTop_toBottomOf="@+id/current_book"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/view_library_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="130dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
         android:text="@string/view_library"
-        app:layout_constraintEnd_toStartOf="@+id/add_new_book_button"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/set_reminder_button" />
+        app:layout_constraintBottom_toBottomOf="@+id/set_reminder_button"
+        app:layout_constraintStart_toEndOf="@+id/set_reminder_button"
+        app:layout_constraintTop_toTopOf="@+id/set_reminder_button" />
 
     <Button
         android:id="@+id/add_new_book_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_width="130dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
         android:text="@string/add_new_book"
-        app:layout_constraintBaseline_toBaselineOf="@+id/view_library_button"
+        app:layout_constraintBottom_toBottomOf="@+id/view_library_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/view_library_button" />
+        app:layout_constraintStart_toEndOf="@+id/view_library_button"
+        app:layout_constraintTop_toTopOf="@+id/view_library_button" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="56dp"
         android:text="@string/currently_reading"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.396"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/main_search" />
 
     <ImageView
         android:id="@+id/current_book"
-        android:layout_width="168dp"
-        android:layout_height="217dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="194dp"
+        android:layout_height="222dp"
+        android:layout_marginTop="15dp"
         android:src="@drawable/life_the_universe_and_everything"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.448"
+        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/add_note_main"
         android:layout_width="102dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
         android:text="@string/add_new_note"
         app:layout_constraintStart_toEndOf="@+id/current_book"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toTopOf="@+id/current_book" />
 
     <Button
         android:id="@+id/view_notes_btn"
-        android:layout_width="103dp"
-        android:layout_height="57dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
         android:text="@string/view_current_notes"
         app:layout_constraintEnd_toEndOf="@+id/add_note_main"
+        app:layout_constraintStart_toStartOf="@+id/add_note_main"
         app:layout_constraintTop_toBottomOf="@+id/add_note_main" />
 
     <Button
         android:id="@+id/set_page_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
         android:text="@string/set_page"
+        app:layout_constraintBottom_toTopOf="@+id/current_books_button"
         app:layout_constraintEnd_toEndOf="@+id/view_notes_btn"
         app:layout_constraintTop_toBottomOf="@+id/view_notes_btn" />
 
