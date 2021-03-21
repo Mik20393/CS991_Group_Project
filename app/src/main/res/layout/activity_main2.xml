@@ -7,6 +7,7 @@
     android:background="#82A7FF"
     tools:context=".MainActivity">
 
+
     <TextView
         android:id="@+id/filter_search_btn2"
         android:layout_width="wrap_content"

@@ -2,6 +2,7 @@ package com.example.bookbuzz;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Notification;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -14,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private Button addNewBook;
     private Button addNote;
     private Button viewNotes;
+    private Button setReminder;
     private TextView filter_search;
     private Button view_library;
 
@@ -26,10 +28,19 @@ public class MainActivity extends AppCompatActivity {
         addNote = findViewById(R.id.add_note_main);
         viewNotes = findViewById(R.id.view_notes_btn);
         filter_search = findViewById(R.id.filter_search_btn2);
+        setReminder = findViewById(R.id.set_reminder_button);
         view_library = findViewById(R.id.view_library_button);
 
         setCurrentBook();
         createUserLibrary();
+
+        setReminder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent setReminderIntent = new Intent(MainActivity.this, Reminder.class);
+                startActivity(setReminderIntent);
+            }
+        });
 
         search.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,28 +85,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void goToSearchPage(){
-        Intent intent = new Intent(this, SearchResults.class);
-        startActivity(intent);
+        Intent searchPageIntent = new Intent(this, SearchResults.class);
+        startActivity(searchPageIntent);
     }
 
     public void createNewBook(){
-        Intent intent = new Intent(this, AddNewBook.class);
-        startActivity(intent);
+        Intent createBookIntent = new Intent(this, AddNewBook.class);
+        startActivity(createBookIntent);
     }
 
     public void createNewNote(){
-        Intent intent = new Intent(this, AddNote.class);
-        startActivity(intent);
+        Intent createNoteIntent = new Intent(this, AddNote.class);
+        startActivity(createNoteIntent);
     }
 
     public void goToNotes(){
-        Intent intent = new Intent(this, NotesPage.class);
-        startActivity(intent);
+        Intent viewNotePageIntent = new Intent(this, ViewNotes.class);
+        startActivity(viewNotePageIntent);
     }
 
     public void filterSearch(){
-        Intent intent = new Intent(this, FilterSearch.class);
-        startActivity(intent);
+        Intent filterSearchIntent = new Intent(this, FilterSearch.class);
+        startActivity(filterSearchIntent);
     }
 
     public void setCurrentBook() {
