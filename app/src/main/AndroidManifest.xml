@@ -11,6 +11,7 @@
         android:theme="@style/Theme.BookBuzz">
         <activity android:name=".ReadHistory"></activity>
         <activity android:name=".ViewLibrary" />
+        <activity android:name=".SearchDatabase" />
         <activity android:name=".Reminder" />
         <activity android:name=".ViewNotes" />
         <activity android:name=".AddNewBook" />

@@ -10,11 +10,14 @@ import java.util.ArrayList;
 
 public class ViewLibrary extends AppCompatActivity {
 
-    RecyclerView recyclerView;
+    RecyclerView libraryRecyclerView;
 
 
-    ArrayList<String> s1;
-    ArrayList<String> s2;
+    ArrayList<String> title;
+    ArrayList<String> author;
+    ArrayList<String> status;
+    ArrayList<String> bookmark;
+    ArrayList<String> isbn;
     int[] images;
 
     @Override
@@ -22,15 +25,18 @@ public class ViewLibrary extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_library);
 
-        recyclerView = findViewById(R.id.recyclerView);
+        libraryRecyclerView = findViewById(R.id.searchDatabaserecyclerView);
 
         images = DataUtility.getImages();
-        s1 = DataUtility.getNames();
-        s2 = DataUtility.getISBNs();
+        title = DataUtility.getNames();
+        author = DataUtility.getAuthors();
+        bookmark = DataUtility.getBookmarks();
+        status = DataUtility.getAllStatus();
+        isbn = DataUtility.getISBNs();
 
-        ViewLibraryAdapter viewLibraryAdapter = new ViewLibraryAdapter(this, s1, s2, images);
-        recyclerView.setAdapter(viewLibraryAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        ViewLibraryAdapter viewLibraryAdapter = new ViewLibraryAdapter(this, title, author, status, bookmark, isbn, images);
+        libraryRecyclerView.setAdapter(viewLibraryAdapter);
+        libraryRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
     }
 

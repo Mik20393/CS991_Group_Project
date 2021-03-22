@@ -39,17 +39,32 @@ public class EnterBookDetails extends AppCompatActivity {
 
 
 
+        if(getIntent().hasExtra("edit")){
 
-        Intent intent = getIntent();
-        String identity = intent.getStringExtra("identity");
+            String isbn = getIntent().getStringExtra("isbn");
+            BookBuzzDataModel book = DataUtility.getABookByIsbn(isbn);
 
+            enter_author_name.setText(book.getAuthor());
+            enter_book_name.setText(book.getCurrentBookName());
+            page_number_entry.setText(book.getPages());
+            isbn_entry.setText(book.getIsbn());
+            year_entry.setText(book.getYear());
+            genre_entry.setText(book.getGenre());
 
-        if (identity.equals("database")) {
-            String title = intent.getStringExtra("title");
-            String author = intent.getStringExtra("author");
-            enter_book_name.setText(title);
-            enter_author_name.setText(author);
+        } else if (getIntent().hasExtra("db")){
+            String isbn = getIntent().getStringExtra("isbn");
+            BookBuzzDataModel book = DataUtility.getBookByIsbnDB(isbn);
+
+            enter_author_name.setText(book.getAuthor());
+            enter_book_name.setText(book.getCurrentBookName());
+            page_number_entry.setText(book.getPages());
+            isbn_entry.setText(book.getIsbn());
+            year_entry.setText(book.getYear());
+            genre_entry.setText(book.getGenre());
+
         }
+
+
 
         addBook.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,15 +96,27 @@ public class EnterBookDetails extends AppCompatActivity {
 
     public void addBook() {
 
+        if(getIntent().hasExtra("edit")){
 
-
-        BookBuzzDataModel addedBook = new BookBuzzDataModel((enter_book_name.getText().toString()), isbn_entry.getText().toString());
-        addedBook.setGenre(genre_entry.getText().toString());
-        addedBook.setPages(page_number_entry.getText().toString());
-        addedBook.setYear(year_entry.getText().toString());
-        addedBook.setImage(R.drawable.hitchhikers_guide);
-        DataUtility.addABook(addedBook);
+            String isbn = getIntent().getStringExtra("isbn");
+            BookBuzzDataModel book = DataUtility.getABookByIsbn(isbn);
+            book.setCurrentBookName(enter_book_name.getText().toString());
+            book.setIsbn(isbn_entry.getText().toString());
+            book.setAuthor(enter_author_name.getText().toString());
+            book.setYear(year_entry.getText().toString());
+            book.setPages(page_number_entry.getText().toString());
+            book.setGenre(genre_entry.getText().toString());
+        } else {
+            BookBuzzDataModel addedBook = new BookBuzzDataModel((enter_book_name.getText().toString()), isbn_entry.getText().toString());
+            addedBook.setAuthor(enter_author_name.getText().toString());
+            addedBook.setGenre(genre_entry.getText().toString());
+            addedBook.setPages(page_number_entry.getText().toString());
+            addedBook.setYear(year_entry.getText().toString());
+            addedBook.setImage(R.drawable.hitchhikers_guide);
+            DataUtility.addABook(addedBook);
+        }
         openSetStatus();
+
     }
 
     public void openSetStatus() {

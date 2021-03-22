@@ -9,6 +9,7 @@ import java.util.List;
 public class BookBuzzDataModel {
     private String isbn;
     private String currentBookName;
+    private String author;
     private String status;
     private String bookmark;
     private String year;
@@ -23,6 +24,7 @@ public class BookBuzzDataModel {
         this.currentBookName = bookName;
         this.isbn = bookIsbn;
         notes = new ArrayList<>();
+        this.bookmark = "0";
     }
 
     public String getPages(){
@@ -30,6 +32,15 @@ public class BookBuzzDataModel {
     }
     public void setPages(String pages) {
         this.pages = pages;
+    }
+
+    public String getAuthor(){
+
+        return author;
+    }
+    public void setAuthor(String author) {
+
+        this.author = author;
     }
 
     public String getGenre() {

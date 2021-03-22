@@ -120,12 +120,12 @@
         android:layout_marginLeft="20dp"
         android:text="@string/remove_button"
         android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/button4"
-        app:layout_constraintStart_toEndOf="@+id/button4"
-        app:layout_constraintTop_toTopOf="@+id/button4" />
+        app:layout_constraintBottom_toBottomOf="@+id/editBook"
+        app:layout_constraintStart_toEndOf="@+id/editBook"
+        app:layout_constraintTop_toTopOf="@+id/editBook" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/editBook"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="56dp"
@@ -230,7 +230,7 @@
         android:layout_marginTop="32dp"
         android:text="View Library"
         app:layout_constraintStart_toEndOf="@+id/set_reminder_vb"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+        app:layout_constraintTop_toBottomOf="@+id/editBook" />
 
     <Button
         android:id="@+id/set_reminder_vb"
@@ -245,7 +245,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/view_library_vb"
         app:layout_constraintEnd_toStartOf="@+id/view_library_vb"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4"
+        app:layout_constraintTop_toBottomOf="@+id/editBook"
         app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

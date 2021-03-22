@@ -23,6 +23,7 @@ public class ViewBook extends AppCompatActivity {
     TextView bookISBN;
     EditText bookmarkPage;
     Button viewLibrary;
+    Button editBook;
     Button home;
     Button setReminder;
 
@@ -44,9 +45,15 @@ public class ViewBook extends AppCompatActivity {
         viewLibrary = findViewById(R.id.view_library_vb);
         bookmark = findViewById(R.id.bookmark_btn);
         bookmarkPage = findViewById(R.id.editBookmark);
+        editBook = findViewById(R.id.editBook);
         setBookDetails();
 
-
+        editBook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editBook();
+            }
+        });
 
         removeBook.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,7 +100,8 @@ public class ViewBook extends AppCompatActivity {
         status.setText(book.getStatus());
         bookmarkPage.setText(book.getBookmark());
         pages.setText(book.getPages());
-        author.setText(book.getPages());
+        published.setText(book.getYear());
+        author.setText(book.getAuthor());
         bookISBN.setText(book.getIsbn());
     }
 
@@ -134,6 +142,14 @@ public class ViewBook extends AppCompatActivity {
         Intent intent = new Intent(this, Reminder.class);
         startActivity(intent);
     }
+    public void editBook(){
+
+        String isbn = this.bookISBN.getText().toString();
+        String edit = "edit";
+        Intent intent = new Intent(this, EnterBookDetails.class);
+        intent.putExtra("isbn", isbn);
+        intent.putExtra("edit",edit);
+        startActivity(intent);
+    }
 
 }
-

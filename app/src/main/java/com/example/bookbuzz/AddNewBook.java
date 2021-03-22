@@ -37,9 +37,10 @@ public class AddNewBook extends AppCompatActivity {
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                displaySearchResults();
+                openSearchDatabase();
             }
         });
+
         addManually.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,9 +53,9 @@ public class AddNewBook extends AppCompatActivity {
     /***
      * Method to use to intent(start) another activity.
      */
-    public void displaySearchResults(){
-        Intent displayResultIntent = new Intent(this, SearchResults.class);
-        startActivity(displayResultIntent);
+    public void openSearchDatabase(){
+        Intent intent = new Intent(this, SearchDatabase.class);
+        startActivity(intent);
     }
     public void openEnterBookDetails(){
 

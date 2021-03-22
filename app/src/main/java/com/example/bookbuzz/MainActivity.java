@@ -16,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
     private Button addNote;
     private Button viewNotes;
     private Button setReminder;
-    private TextView filter_search;
     private TextView currentBookTitle;
     private Button view_library;
     private Button view_history;
@@ -36,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
         setCurrentBook();
         createUserLibrary();
+        createDatabase();
 
         setReminder.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -134,6 +134,22 @@ public class MainActivity extends AppCompatActivity {
         DataUtility.addABook(book2);
         DataUtility.addABook(book3);
 
+    }
+
+    public static void createDatabase(){
+        BookBuzzDataModel bookDB1 = new BookBuzzDataModel("The Grapes of Wrath", "ISBN-5678");
+        bookDB1.setAuthor("John Steinbeck");
+        bookDB1.setImage(R.drawable.restaurant_at_the_end_of_the_universe);
+        BookBuzzDataModel bookDB2 = new BookBuzzDataModel("The Fellowship of the Ring", "ISBN-3657");
+        bookDB2.setAuthor("J. R. R. Tolkein");
+        bookDB2.setImage(R.drawable.hitchhikers_guide);
+        BookBuzzDataModel bookDB3 = new BookBuzzDataModel("Catch 22", "ISBN-23657");
+        bookDB3.setAuthor("Joseph Heller");
+        bookDB3.setImage(R.drawable.life_the_universe_and_everything);
+        bookDB3.setAuthor("Joseph Heller");
+        DataUtility.addBookDB(bookDB1);
+        DataUtility.addBookDB(bookDB2);
+        DataUtility.addBookDB(bookDB3);
     }
 
 
