@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_book_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BookBuzz">
-        <activity android:name=".ReadHistory"></activity>
+        <activity android:name=".ReadHistory"/>
         <activity android:name=".ViewLibrary" />
         <activity android:name=".SearchDatabase" />
         <activity android:name=".Reminder" />
@@ -24,7 +24,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FilterSearch" />
         <activity android:name=".SearchResults" />
 
         <receiver android:name=".AlertReceiver" />
