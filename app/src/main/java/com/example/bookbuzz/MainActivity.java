@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void goToSearchPage(){
-        Intent searchPageIntent = new Intent(this, SearchResults.class);
+        Intent searchPageIntent = new Intent(this, SearchDatabase.class);
         startActivity(searchPageIntent);
     }
 
