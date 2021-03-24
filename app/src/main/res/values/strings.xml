@@ -102,5 +102,9 @@
     <string name="start_date1">Started on: 01/01/2021</string>
     <string name="finish_date1">Finished on: 02/02/2021</string>
     <string name="your_rating">Your rating:</string>
+    <!--strings for the scan book activity-->
+    <string name="add_new_by_scanning">Adding a new book by scanning</string>
+    <string name="instructions">Centre your camera on the Barcode of the book you wish to scan</string>
+    <string name="cancel_scan">Cancel Scan</string>
 
 </resources>
