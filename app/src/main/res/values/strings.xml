@@ -36,8 +36,8 @@
     <string name="set_page">Set Page</string>
     <string name="set_current_book">Set Your Current Book</string>
     <string name="reminder_button">Set Reminder</string>
-    <string name="view_library">View Your Library</string>
-    <string name="add_new_book">Add a New Book</string>
+    <string name="view_library">View Library</string>
+    <string name="add_new_book">Add Book</string>
     <string name="new_note_title">Add new note:</string>
     <string name="book_title">\"Book Name\"</string>
     <string name="note_for_page_number">Note for page:</string>
@@ -95,7 +95,7 @@
     <string name="published_label_vb">Published:</string>
     <string name="status_label_vb">Status:</string>
     <string name="isbn_label_vb">ISBN:</string>
-    <string name="view_read_history">View Read History</string>
+    <string name="view_read_history">Read History</string>
     <!--strings for the read history-->
     <string name="read_history">Your read history</string>
     <string name="read_history_subtitle">Touch a book cover or title to view notes and details</string>

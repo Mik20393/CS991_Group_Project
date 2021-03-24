@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.android.material.bottomnavigation.BottomNavigationMenu;
+import com.google.android.material.bottomnavigation.BottomNavigationMenuView;
+
 public class MainActivity extends AppCompatActivity {
 
     private Button search;
@@ -36,6 +39,11 @@ public class MainActivity extends AppCompatActivity {
         setCurrentBook();
         createUserLibrary();
         createDatabase();
+
+
+
+
+
 
         setReminder.setOnClickListener(new View.OnClickListener() {
             @Override
