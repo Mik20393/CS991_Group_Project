@@ -16,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
     private Button addNote;
     private Button viewNotes;
     private Button setReminder;
-    private TextView currentBookTitle;
     private Button view_library;
     private Button view_history;
 
@@ -124,32 +123,57 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public static void createUserLibrary(){
-        BookBuzzDataModel book1 = new BookBuzzDataModel("Hitchhikers guide to the Galaxy", "ISBN-54321");
-        book1.setImage(R.drawable.hitchhikers_guide);
-        BookBuzzDataModel book2 = new BookBuzzDataModel("Lanark", "ISBN-64321");
-        book2.setImage(R.drawable.hitchhikers_guide);
-        BookBuzzDataModel book3 = new BookBuzzDataModel("Brave New World", "ISBN-74321");
-        book3.setImage(R.drawable.hitchhikers_guide);
-        DataUtility.addABook(book1);
-        DataUtility.addABook(book2);
-        DataUtility.addABook(book3);
+        BookBuzzDataModel hitchhikersGuideToTheGalaxy = new BookBuzzDataModel("Hitchhikers guide to the Galaxy", "ISBN-54321");
+        hitchhikersGuideToTheGalaxy.setImage(R.drawable.hitchhikers_guide);
+
+        BookBuzzDataModel lanark = new BookBuzzDataModel("Lanark", "ISBN-64321");
+        lanark.setAuthor("Alasdair Gray");
+        lanark.setImage(R.drawable.lanark_book);
+
+        BookBuzzDataModel braveNewWorld = new BookBuzzDataModel("Brave New World", "ISBN-74321");
+        braveNewWorld.setImage(R.drawable.hitchhikers_guide);
+        braveNewWorld.setAuthor("Aldous Huxley");
+
+        DataUtility.addABook(hitchhikersGuideToTheGalaxy);
+        DataUtility.addABook(lanark);
+        DataUtility.addABook(braveNewWorld);
 
     }
 
     public static void createDatabase(){
-        BookBuzzDataModel bookDB1 = new BookBuzzDataModel("The Grapes of Wrath", "ISBN-5678");
-        bookDB1.setAuthor("John Steinbeck");
-        bookDB1.setImage(R.drawable.restaurant_at_the_end_of_the_universe);
-        BookBuzzDataModel bookDB2 = new BookBuzzDataModel("The Fellowship of the Ring", "ISBN-3657");
-        bookDB2.setAuthor("J. R. R. Tolkein");
-        bookDB2.setImage(R.drawable.hitchhikers_guide);
-        BookBuzzDataModel bookDB3 = new BookBuzzDataModel("Catch 22", "ISBN-23657");
-        bookDB3.setAuthor("Joseph Heller");
-        bookDB3.setImage(R.drawable.life_the_universe_and_everything);
-        bookDB3.setAuthor("Joseph Heller");
-        DataUtility.addBookDB(bookDB1);
-        DataUtility.addBookDB(bookDB2);
-        DataUtility.addBookDB(bookDB3);
+
+        BookBuzzDataModel grapesOfWrath = new BookBuzzDataModel("The Grapes of Wrath", "ISBN-5678");
+        grapesOfWrath.setAuthor("John Steinbeck");
+        grapesOfWrath.setImage(R.drawable.restaurant_at_the_end_of_the_universe);
+
+        BookBuzzDataModel LOTR = new BookBuzzDataModel("The Fellowship of the Ring", "ISBN-3657");
+        LOTR.setAuthor("J. R. R. Tolkein");
+        LOTR.setImage(R.drawable.lotr_book);
+
+        BookBuzzDataModel catch22 = new BookBuzzDataModel("Catch 22", "ISBN-23657");
+        catch22.setImage(R.drawable.life_the_universe_and_everything);
+        catch22.setAuthor("Joseph Heller");
+
+        BookBuzzDataModel lordOfLight = new BookBuzzDataModel("Lord of Light", "ISBN-24356");
+        lordOfLight.setAuthor("Roger Zelazny");
+        lordOfLight.setImage(R.drawable.lord_of_light);
+
+        BookBuzzDataModel restaurantAtEOU = new BookBuzzDataModel("Restaurant at the End of the Universe", "ISBN-14356");
+        restaurantAtEOU.setImage(R.drawable.restaurant_at_the_end_of_the_universe);
+        restaurantAtEOU.setAuthor("Douglas Adams");
+
+        BookBuzzDataModel lifeUniverseEverything = new BookBuzzDataModel("Restaurant at the End of the Universe", "ISBN-54586");
+        lifeUniverseEverything.setImage(R.drawable.life_the_universe_and_everything);
+        lifeUniverseEverything.setAuthor("Douglas Adams");
+
+
+        DataUtility.addBookDB(grapesOfWrath);
+        DataUtility.addBookDB(LOTR);
+        DataUtility.addBookDB(catch22);
+        DataUtility.addBookDB(lordOfLight);
+        DataUtility.addBookDB(restaurantAtEOU);
+        DataUtility.addBookDB(lifeUniverseEverything);
+
     }
 
 

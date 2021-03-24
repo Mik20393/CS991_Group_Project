@@ -124,6 +124,7 @@ public class SearchDatabaseAdapter extends RecyclerView.Adapter<SearchDatabaseAd
                 }
 
             }
+
             FilterResults results = new FilterResults();
             results.values = filteredDatabase;
 
