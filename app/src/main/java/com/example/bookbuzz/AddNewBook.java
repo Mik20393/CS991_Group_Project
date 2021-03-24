@@ -19,6 +19,7 @@ public class AddNewBook extends AppCompatActivity {
     ImageButton search;
     Spinner findBookSpinner;
     Button addManually;
+    Button scanBook;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,7 @@ public class AddNewBook extends AppCompatActivity {
         search = findViewById(R.id.search_btn_add_book);
         findBookSpinner = findViewById(R.id.findBookSpinner);
         addManually = findViewById(R.id.addManually);
+        scanBook = findViewById(R.id.scanBarcode);
 
         ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(AddNewBook.this, android.R.layout.simple_list_item_1,
                 getResources().getStringArray(R.array.find_book_spinner));
@@ -48,6 +50,11 @@ public class AddNewBook extends AppCompatActivity {
             }
         });
 
+        scanBook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {openScanBook(); }
+        });
+
     }
 
     /***
@@ -64,5 +71,9 @@ public class AddNewBook extends AppCompatActivity {
         Intent intent = new Intent(this, EnterBookDetails.class);
         intent.putExtra("identity", identity);
         startActivity(intent);
+    }
+
+    public void openScanBook() {
+        Intent intent = new Intent(this, ScanBook.class);
     }
 }
