@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,21 +16,21 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class SearchDatabaseAdapter extends RecyclerView.Adapter<SearchDatabaseAdapter.DatabaseViewHolder> {
-
-    ArrayList<String> title, author, isbn;
-    int[] images;
+public class SearchDatabaseAdapter extends RecyclerView.Adapter<SearchDatabaseAdapter.DatabaseViewHolder> implements Filterable {
+    String criteria;
+    ArrayList<BookBuzzDataModel> database;
+    ArrayList<BookBuzzDataModel> fullDatabase;
     Context context;
 
-    public SearchDatabaseAdapter(Context ct, ArrayList<String> title, ArrayList<String> author, ArrayList<String> isbn, int[] img) {
+    public SearchDatabaseAdapter(Context ct, ArrayList<BookBuzzDataModel> database) {
+        this.criteria = "title";
         context = ct;
-        this.title = title;
-        this.author = author;
-        this.isbn = isbn;
-        images = img;
-
+        this.database = database;
+        fullDatabase = new ArrayList<>(database);
     }
-
+    public void setCriteria(String criteria){
+        this.criteria = criteria;
+    }
     @NonNull
     @Override
     public DatabaseViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -40,10 +42,13 @@ public class SearchDatabaseAdapter extends RecyclerView.Adapter<SearchDatabaseAd
     @Override
     public void onBindViewHolder(@NonNull DatabaseViewHolder holder, final int position) {
 
-        holder.book_title_txt.setText(title.get(position));
-        holder.book_author_txt.setText(author.get(position));
-        holder.isbn_txt.setText(isbn.get(position));
-        holder.searchDBImageView.setImageResource(images[position]);
+        BookBuzzDataModel positionBook = database.get(position);
+
+        holder.searchDBImageView.setImageResource(positionBook.getImage());
+        holder.book_title_txt.setText(positionBook.getCurrentBookName());
+        holder.book_author_txt.setText(positionBook.getAuthor());
+        holder.isbn_txt.setText(positionBook.getIsbn());
+
 
         holder.searchDBLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,7 +56,7 @@ public class SearchDatabaseAdapter extends RecyclerView.Adapter<SearchDatabaseAd
 
                 String db = "db";
                 Intent intent = new Intent(context, EnterBookDetails.class);
-                intent.putExtra("isbn", isbn.get(position));
+                intent.putExtra("isbn",positionBook.getIsbn());
                 intent.putExtra("db", db);
                 context.startActivity(intent);
             }
@@ -61,7 +66,7 @@ public class SearchDatabaseAdapter extends RecyclerView.Adapter<SearchDatabaseAd
 
     @Override
     public int getItemCount() {
-        return images.length;
+        return database.size();
     }
 
     public class DatabaseViewHolder extends RecyclerView.ViewHolder {
@@ -84,5 +89,54 @@ public class SearchDatabaseAdapter extends RecyclerView.Adapter<SearchDatabaseAd
 
         }
     }
+    @Override
+    public Filter getFilter() {
+        return databaseFilter;
+    }
+
+    private Filter databaseFilter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+
+            ArrayList<BookBuzzDataModel> filteredDatabase = new ArrayList<>();
+
+            if (constraint == null || constraint.length() == 0) {
+                filteredDatabase.addAll(fullDatabase);
+
+            } else {
+
+                String filterPattern = constraint.toString().toLowerCase().trim();
+
+                if (criteria.equals("title")) {
+                    for (BookBuzzDataModel book : fullDatabase) {
+                        if (book.getCurrentBookName().toLowerCase().contains(filterPattern)) {
+                            filteredDatabase.add(book);
+
+
+                        }
+                    }
+                } else if (criteria.equals("author")) {
+                    for (BookBuzzDataModel book : fullDatabase) {
+                        if (book.getAuthor().toLowerCase().contains(filterPattern)) {
+                            filteredDatabase.add(book);
+                        }
+                    }
+                }
+
+            }
+            FilterResults results = new FilterResults();
+            results.values = filteredDatabase;
+
+            return results;
+        }
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            database.clear();
+
+            database.addAll((ArrayList)results.values);
+            notifyDataSetChanged();
+        }
+    };
+
 }
 
