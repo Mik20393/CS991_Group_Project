@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -50,6 +49,7 @@ public class SearchDatabaseAdapter extends RecyclerView.Adapter<SearchDatabaseAd
         holder.searchDBImageView.setImageResource(positionBook.getImage());
         holder.book_title_txt.setText(positionBook.getCurrentBookName());
         holder.book_author_txt.setText(positionBook.getAuthor());
+        holder.genre_txt.setText(positionBook.getGenre());
         holder.isbn_txt.setText(positionBook.getIsbn());
 
 
@@ -82,7 +82,7 @@ public class SearchDatabaseAdapter extends RecyclerView.Adapter<SearchDatabaseAd
 
     public class DatabaseViewHolder extends RecyclerView.ViewHolder {
 
-        TextView book_title_txt, book_author_txt, book_status_txt, bookmark_txt, isbn_txt;
+        TextView book_title_txt, book_author_txt, genre_txt, isbn_txt;
         ImageView searchDBImageView;
         ConstraintLayout searchDBLayout;
         ImageView addToLibrary;
@@ -91,11 +91,10 @@ public class SearchDatabaseAdapter extends RecyclerView.Adapter<SearchDatabaseAd
         public DatabaseViewHolder(@NonNull View itemView) {
             super(itemView);
             addToLibrary = itemView.findViewById(R.id.addToLibrary);
-            book_title_txt = itemView.findViewById(R.id.book_title_txt_db);
-            book_author_txt = itemView.findViewById(R.id.book_author_txt_db);
-            book_status_txt = itemView.findViewById(R.id.book_status_txt_db);
-            bookmark_txt = itemView.findViewById(R.id.book_bookmark_txt_db);
+            book_title_txt = itemView.findViewById(R.id.book_title_txt_db_row);
+            book_author_txt = itemView.findViewById(R.id.book_author_txt_db_row);
             isbn_txt = itemView.findViewById(R.id.book_isbn_txt);
+            genre_txt = itemView.findViewById(R.id.book_genre_txt_db_row);
             searchDBImageView = itemView.findViewById(R.id.searchDBImageView);
             searchDBLayout = itemView.findViewById(R.id.searchDBLayout);
             isbn_txt.setVisibility(View.GONE);

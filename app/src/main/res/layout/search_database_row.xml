@@ -20,7 +20,7 @@
             android:background="#82A7FF">
 
             <TextView
-                android:id="@+id/book_title_txt_db"
+                android:id="@+id/book_title_txt_db_row"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -33,13 +33,13 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/book_author_txt_db"
+                android:id="@+id/book_author_txt_db_row"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="TextView"
-                app:layout_constraintStart_toStartOf="@+id/book_title_txt_db"
-                app:layout_constraintTop_toBottomOf="@+id/book_title_txt_db" />
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/author_label_db_row"
+                app:layout_constraintStart_toEndOf="@+id/author_label_db_row" />
 
             <ImageView
                 android:id="@+id/searchDBImageView"
@@ -49,28 +49,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/hitchhikers_guide" />
-
-            <TextView
-                android:id="@+id/book_status_txt_db"
-                android:layout_width="wrap_content"
-                android:layout_height="24dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="172dp"
-                android:layout_marginRight="172dp"
-                android:text="TextView"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/book_author_txt_db" />
-
-            <TextView
-                android:id="@+id/book_bookmark_txt_db"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/book_status_txt_db"
-                app:layout_constraintTop_toBottomOf="@+id/book_status_txt_db" />
 
             <TextView
                 android:id="@+id/book_isbn_txt"
@@ -95,6 +73,31 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:srcCompat="@drawable/ic_add_book"
                 tools:ignore="VectorDrawableCompat" />
+
+            <TextView
+                android:id="@+id/book_genre_txt_db_row"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBaseline_toBaselineOf="@+id/genre_label_vb_row"
+                app:layout_constraintStart_toStartOf="@+id/book_author_txt_db_row" />
+
+            <TextView
+                android:id="@+id/genre_label_vb_row"
+                android:layout_width="43dp"
+                android:layout_height="22dp"
+                android:layout_marginBottom="20dp"
+                android:text="Genre:"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/author_label_db_row" />
+
+            <TextView
+                android:id="@+id/author_label_db_row"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Author:"
+                app:layout_constraintStart_toStartOf="@+id/book_title_txt_db_row"
+                app:layout_constraintTop_toBottomOf="@+id/book_title_txt_db_row" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

@@ -79,13 +79,13 @@ public class ViewLibraryAdapter extends RecyclerView.Adapter<ViewLibraryAdapter.
 
         public LibraryViewHolder(@NonNull View itemView) {
             super(itemView);
-            book_title_txt = itemView.findViewById(R.id.book_title_txt_db);
-            book_author_txt = itemView.findViewById(R.id.book_author_txt_db);
-            book_status_txt = itemView.findViewById(R.id.book_status_txt_db);
-            bookmark_txt = itemView.findViewById(R.id.book_bookmark_txt_db);
-            isbn_txt = itemView.findViewById(R.id.book_isbn_txt);
-            viewLibImageView = itemView.findViewById(R.id.searchDBImageView);
-            viewLibraryLayout = itemView.findViewById(R.id.searchDBLayout);
+            book_title_txt = itemView.findViewById(R.id.book_title_txt_vl_row);
+            book_author_txt = itemView.findViewById(R.id.book_author_txt_vl_row);
+            book_status_txt = itemView.findViewById(R.id.book_status_txt_vl_row);
+            bookmark_txt = itemView.findViewById(R.id.book_bookmark_txt_vl_row);
+            isbn_txt = itemView.findViewById(R.id.book_isbn_txt_vl_row);
+            viewLibImageView = itemView.findViewById(R.id.viewLibraryImageView);
+            viewLibraryLayout = itemView.findViewById(R.id.viewLibraryLayout);
             isbn_txt.setVisibility(View.GONE);
 
         }
