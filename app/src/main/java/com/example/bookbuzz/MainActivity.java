@@ -107,8 +107,9 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void setCurrentBook() {
-        BookBuzzDataModel currentBook = new BookBuzzDataModel("Duglas Adams", "ISIN-234566");
+        BookBuzzDataModel currentBook = new BookBuzzDataModel("Hitchhikers Guide to the Galaxy", "ISBN-234566");
         currentBook.setImage(R.drawable.hitchhikers_guide);
+        currentBook.setAuthor("Douglas Adams");
         DataUtility.addABook(currentBook);
         DataUtility.setCurrentBook(currentBook);
     }
@@ -124,6 +125,7 @@ public class MainActivity extends AppCompatActivity {
 
     public static void createUserLibrary(){
         BookBuzzDataModel hitchhikersGuideToTheGalaxy = new BookBuzzDataModel("Hitchhikers guide to the Galaxy", "ISBN-54321");
+        hitchhikersGuideToTheGalaxy.setAuthor("Douglas Adams");
         hitchhikersGuideToTheGalaxy.setImage(R.drawable.hitchhikers_guide);
 
         BookBuzzDataModel lanark = new BookBuzzDataModel("Lanark", "ISBN-64321");
@@ -131,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
         lanark.setImage(R.drawable.lanark_book);
 
         BookBuzzDataModel braveNewWorld = new BookBuzzDataModel("Brave New World", "ISBN-74321");
-        braveNewWorld.setImage(R.drawable.hitchhikers_guide);
+        braveNewWorld.setImage(R.drawable.brave_new_world);
         braveNewWorld.setAuthor("Aldous Huxley");
 
         DataUtility.addABook(hitchhikersGuideToTheGalaxy);

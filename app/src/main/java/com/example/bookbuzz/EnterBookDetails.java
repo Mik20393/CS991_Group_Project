@@ -100,12 +100,27 @@ public class EnterBookDetails extends AppCompatActivity {
 
             String isbn = getIntent().getStringExtra("isbn");
             BookBuzzDataModel book = DataUtility.getABookByIsbn(isbn);
+
             book.setCurrentBookName(enter_book_name.getText().toString());
             book.setIsbn(isbn_entry.getText().toString());
             book.setAuthor(enter_author_name.getText().toString());
             book.setYear(year_entry.getText().toString());
             book.setPages(page_number_entry.getText().toString());
             book.setGenre(genre_entry.getText().toString());
+        } if(getIntent().hasExtra("db")){
+
+            String isbn = getIntent().getStringExtra("isbn");
+            BookBuzzDataModel book = DataUtility.getBookByIsbnDB(isbn);
+            int coverPic = book.getImage();
+
+            BookBuzzDataModel addedBook = new BookBuzzDataModel((enter_book_name.getText().toString()), isbn_entry.getText().toString());
+            addedBook.setAuthor(enter_author_name.getText().toString());
+            addedBook.setGenre(genre_entry.getText().toString());
+            addedBook.setPages(page_number_entry.getText().toString());
+            addedBook.setYear(year_entry.getText().toString());
+            addedBook.setImage(coverPic);
+            DataUtility.addABook(addedBook);
+
         } else {
             BookBuzzDataModel addedBook = new BookBuzzDataModel((enter_book_name.getText().toString()), isbn_entry.getText().toString());
             addedBook.setAuthor(enter_author_name.getText().toString());

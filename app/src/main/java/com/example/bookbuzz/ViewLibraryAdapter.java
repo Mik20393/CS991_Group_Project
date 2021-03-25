@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,22 +15,25 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class ViewLibraryAdapter extends RecyclerView.Adapter<ViewLibraryAdapter.LibraryViewHolder> {
+public class ViewLibraryAdapter extends RecyclerView.Adapter<ViewLibraryAdapter.LibraryViewHolder> implements ViewLibraryAdapterDelete {
 
-    ArrayList<String> title, author, status, bookmark, isbn;
-    int images[];
+    ArrayList<BookBuzzDataModel> library;
+    ArrayList<BookBuzzDataModel> fullLibrary;
     Context context;
+    String criteria;
 
-    public ViewLibraryAdapter(Context ct, ArrayList<String> title, ArrayList<String> author, ArrayList<String> status,
-                              ArrayList<String> bookmark, ArrayList<String> isbn, int[] img){
+
+
+    public ViewLibraryAdapter(Context ct, ArrayList<BookBuzzDataModel> library){
         context = ct;
-        this.title = title;
-        this.author = author;
-        this.status = status;
-        this.bookmark = bookmark;
-        this.isbn = isbn;
-        images = img;
+        this.library = library;
+        this.criteria = "title";
+        fullLibrary = new ArrayList<>(library);
+    }
 
+    @Override
+    public void setCriteria(String criteria) {
+        this.criteria = criteria;
     }
 
     @NonNull
@@ -42,17 +46,19 @@ public class ViewLibraryAdapter extends RecyclerView.Adapter<ViewLibraryAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull LibraryViewHolder holder, final int position) {
-        holder.book_title_txt.setText(title.get(position));
-        holder.book_author_txt.setText(author.get(position));
-        holder.book_status_txt.setText(status.get(position));
-        holder.bookmark_txt.setText(bookmark.get(position));
-        holder.isbn_txt.setText(isbn.get(position));
-        holder.viewLibImageView.setImageResource(images[position]);
+
+        BookBuzzDataModel positionBook = library.get(position);
+        holder.book_title_txt.setText(positionBook.getCurrentBookName());
+        holder.book_author_txt.setText(positionBook.getAuthor());
+        holder.book_status_txt.setText(positionBook.getStatus());
+        holder.bookmark_txt.setText(positionBook.getBookmark());
+        holder.isbn_txt.setText(positionBook.getIsbn());
+        holder.viewLibImageView.setImageResource(positionBook.getImage());
         holder.viewLibraryLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, ViewBook.class);
-                intent.putExtra("isbn", isbn.get(position));
+                intent.putExtra("isbn", positionBook.getIsbn());
                 context.startActivity(intent);
             }
         });
@@ -60,7 +66,7 @@ public class ViewLibraryAdapter extends RecyclerView.Adapter<ViewLibraryAdapter.
 
     @Override
     public int getItemCount() {
-        return images.length;
+        return library.size();
     }
 
     public class LibraryViewHolder extends RecyclerView.ViewHolder {
@@ -83,4 +89,54 @@ public class ViewLibraryAdapter extends RecyclerView.Adapter<ViewLibraryAdapter.
 
         }
     }
+
+    @Override
+    public Filter getFilter() {
+        return libraryFilter;
+    }
+
+    private Filter libraryFilter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+
+            ArrayList<BookBuzzDataModel> filteredLibrary = new ArrayList<>();
+
+            if (constraint == null || constraint.length() == 0) {
+                filteredLibrary.addAll(fullLibrary);
+
+            } else {
+
+                String filterPattern = constraint.toString().toLowerCase().trim();
+
+                if (criteria.equals("title")) {
+                    for (BookBuzzDataModel book : fullLibrary) {
+                        if (book.getCurrentBookName().toLowerCase().contains(filterPattern)) {
+                            filteredLibrary.add(book);
+
+
+                        }
+                    }
+                } else if (criteria.equals("author")) {
+                    for (BookBuzzDataModel book : fullLibrary) {
+                        if (book.getAuthor().toLowerCase().contains(filterPattern)) {
+                            filteredLibrary.add(book);
+                        }
+                    }
+                }
+
+            }
+
+            FilterResults results = new FilterResults();
+            results.values = filteredLibrary;
+
+            return results;
+        }
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            library.clear();
+
+            library.addAll((ArrayList)results.values);
+            notifyDataSetChanged();
+        }
+    };
 }

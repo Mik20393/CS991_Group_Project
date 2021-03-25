@@ -31,6 +31,7 @@ public class SearchDatabaseAdapter extends RecyclerView.Adapter<SearchDatabaseAd
     public void setCriteria(String criteria){
         this.criteria = criteria;
     }
+
     @NonNull
     @Override
     public DatabaseViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
