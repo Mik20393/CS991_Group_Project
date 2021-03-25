@@ -7,7 +7,7 @@
     android:background="#82A7FF">
 
     <ImageView
-        android:id="@+id/bookPicture"
+        android:id="@+id/bookPictureDB"
         android:layout_width="207dp"
         android:layout_height="196dp"
         android:layout_marginTop="100dp"
@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/title_label_vb"
-        app:layout_constraintBaseline_toBaselineOf="@+id/title_txt_vb"
+        app:layout_constraintBaseline_toBaselineOf="@+id/title_txt_vb_db"
         app:layout_constraintStart_toStartOf="@+id/bookPicture" />
 
     <TextView
@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/author_label_vb"
-        app:layout_constraintEnd_toStartOf="@+id/author_txt_vb"
+        app:layout_constraintEnd_toStartOf="@+id/author_txt_vb_db"
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title_txt"
@@ -44,8 +44,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:text="@string/pages_label_vb"
-        app:layout_constraintBottom_toBottomOf="@+id/pages_txt_vb"
-        app:layout_constraintEnd_toStartOf="@+id/pages_txt_vb"
+        app:layout_constraintBottom_toBottomOf="@+id/pages_txt_vb_db"
+        app:layout_constraintEnd_toStartOf="@+id/pages_txt_vb_db"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/author_txt"
         app:layout_constraintTop_toBottomOf="@+id/author_txt" />
@@ -55,13 +55,13 @@
         android:layout_width="wrap_content"
         android:layout_height="23dp"
         android:text="@string/published_label_vb"
-        app:layout_constraintBaseline_toBaselineOf="@+id/year_txt_vb"
-        app:layout_constraintEnd_toStartOf="@+id/year_txt_vb"
+        app:layout_constraintBaseline_toBaselineOf="@+id/year_txt_vb_db"
+        app:layout_constraintEnd_toStartOf="@+id/year_txt_vb_db"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/pages_txt" />
 
     <TextView
-        android:id="@+id/title_txt_vb"
+        android:id="@+id/title_txt_vb_db"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -71,31 +71,31 @@
         app:layout_constraintTop_toBottomOf="@+id/bookPicture" />
 
     <TextView
-        android:id="@+id/author_txt_vb"
+        android:id="@+id/author_txt_vb_db"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        app:layout_constraintEnd_toEndOf="@+id/title_txt_vb"
-        app:layout_constraintStart_toStartOf="@+id/title_txt_vb"
-        app:layout_constraintTop_toBottomOf="@+id/title_txt_vb" />
+        app:layout_constraintEnd_toEndOf="@+id/title_txt_vb_db"
+        app:layout_constraintStart_toStartOf="@+id/title_txt_vb_db"
+        app:layout_constraintTop_toBottomOf="@+id/title_txt_vb_db" />
 
     <TextView
-        android:id="@+id/pages_txt_vb"
+        android:id="@+id/pages_txt_vb_db"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        app:layout_constraintEnd_toEndOf="@+id/author_txt_vb"
-        app:layout_constraintStart_toStartOf="@+id/author_txt_vb"
-        app:layout_constraintTop_toBottomOf="@+id/author_txt_vb" />
+        app:layout_constraintEnd_toEndOf="@+id/author_txt_vb_db"
+        app:layout_constraintStart_toStartOf="@+id/author_txt_vb_db"
+        app:layout_constraintTop_toBottomOf="@+id/author_txt_vb_db" />
 
     <TextView
-        android:id="@+id/year_txt_vb"
+        android:id="@+id/year_txt_vb_db"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        app:layout_constraintEnd_toEndOf="@+id/pages_txt_vb"
-        app:layout_constraintStart_toStartOf="@+id/pages_txt_vb"
-        app:layout_constraintTop_toBottomOf="@+id/pages_txt_vb" />
+        app:layout_constraintEnd_toEndOf="@+id/pages_txt_vb_db"
+        app:layout_constraintStart_toStartOf="@+id/pages_txt_vb_db"
+        app:layout_constraintTop_toBottomOf="@+id/pages_txt_vb_db" />
 
     <TextView
         android:id="@+id/status_label"
@@ -104,9 +104,9 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="116dp"
         android:layout_marginRight="116dp"
-        android:text="@string/status_label_vb"
-        app:layout_constraintBottom_toBottomOf="@+id/isbn_txt_vb"
-        app:layout_constraintEnd_toStartOf="@+id/status_txt_vb"
+        android:text="Genre:"
+        app:layout_constraintBottom_toBottomOf="@+id/isbn_txt_vb_db"
+        app:layout_constraintEnd_toStartOf="@+id/genre_txt_vb_db"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/year_label"
         app:layout_constraintTop_toBottomOf="@+id/year_label"
@@ -116,58 +116,34 @@
         android:id="@+id/removeBook"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:text="@string/remove_button"
+        android:layout_marginTop="12dp"
+        android:text="Add to Library"
         android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/editBook"
-        app:layout_constraintStart_toEndOf="@+id/editBook"
-        app:layout_constraintTop_toTopOf="@+id/editBook" />
-
-    <Button
-        android:id="@+id/editBook"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginLeft="56dp"
-        android:layout_marginTop="28dp"
-        android:text="@string/edit_button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bookmark_btn" />
-
-    <Button
-        android:id="@+id/bookmark_btn"
-        android:layout_width="110dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="208dp"
-        android:text="Bookmark"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/isbn_txt"
-        app:layout_constraintTop_toBottomOf="@+id/isbn_txt"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/isbn_txt_vb_db" />
 
     <TextView
-        android:id="@+id/status_txt_vb"
+        android:id="@+id/genre_txt_vb_db"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="96dp"
         android:layout_marginRight="96dp"
-        app:layout_constraintEnd_toEndOf="@+id/year_txt_vb"
+        app:layout_constraintEnd_toEndOf="@+id/year_txt_vb_db"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/year_txt_vb"
-        app:layout_constraintTop_toBottomOf="@+id/year_txt_vb" />
+        app:layout_constraintStart_toStartOf="@+id/year_txt_vb_db"
+        app:layout_constraintTop_toBottomOf="@+id/year_txt_vb_db" />
 
     <TextView
-        android:id="@+id/isbn_txt_vb"
+        android:id="@+id/isbn_txt_vb_db"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        app:layout_constraintEnd_toEndOf="@+id/status_txt_vb"
-        app:layout_constraintStart_toStartOf="@+id/status_txt_vb"
-        app:layout_constraintTop_toBottomOf="@+id/status_txt_vb" />
+        app:layout_constraintEnd_toEndOf="@+id/genre_txt_vb_db"
+        app:layout_constraintStart_toStartOf="@+id/genre_txt_vb_db"
+        app:layout_constraintTop_toBottomOf="@+id/genre_txt_vb_db" />
 
     <TextView
         android:id="@+id/isbn_txt"
@@ -175,38 +151,15 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:text="@string/isbn_label_vb"
-        app:layout_constraintBottom_toBottomOf="@+id/isbn_txt_vb"
-        app:layout_constraintEnd_toStartOf="@+id/isbn_txt_vb"
+        app:layout_constraintBottom_toBottomOf="@+id/isbn_txt_vb_db"
+        app:layout_constraintEnd_toStartOf="@+id/isbn_txt_vb_db"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/status_label"
         app:layout_constraintTop_toBottomOf="@+id/status_label"
         app:layout_constraintVertical_bias="0.0" />
 
-    <EditText
-        android:id="@+id/editBookmark"
-        android:layout_width="57dp"
-        android:layout_height="42dp"
-        android:ems="10"
-        android:inputType="text"
-        app:layout_constraintBaseline_toBaselineOf="@+id/bookmark_btn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.282"
-        app:layout_constraintStart_toEndOf="@+id/bookmark_btn" />
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Page No."
-        app:layout_constraintBottom_toTopOf="@+id/removeBook"
-        app:layout_constraintEnd_toEndOf="@+id/editBookmark"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editBookmark"
-        app:layout_constraintTop_toBottomOf="@+id/editBookmark"
-        app:layout_constraintVertical_bias="0.0" />
-
     <Button
-        android:id="@+id/home__vb"
+        android:id="@+id/home__vb_db"
         android:layout_width="130dp"
         android:layout_height="80dp"
         android:layout_marginStart="5dp"
@@ -222,30 +175,27 @@
         app:layout_constraintTop_toTopOf="@+id/view_library_vb" />
 
     <Button
-        android:id="@+id/view_library_vb"
+        android:id="@+id/view_library_vb_db"
         android:layout_width="130dp"
         android:layout_height="80dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="104dp"
         android:text="View Library"
         app:layout_constraintStart_toEndOf="@+id/set_reminder_vb"
-        app:layout_constraintTop_toBottomOf="@+id/editBook" />
+        app:layout_constraintTop_toBottomOf="@+id/removeBook" />
 
     <Button
-        android:id="@+id/set_reminder_vb"
+        android:id="@+id/set_reminder_vb_db"
         android:layout_width="130dp"
         android:layout_height="80dp"
         android:layout_marginStart="3dp"
         android:layout_marginLeft="3dp"
-        android:layout_marginTop="24dp"
         android:layout_marginEnd="5dp"
         android:layout_marginRight="5dp"
         android:text="Set Reminder"
-        app:layout_constraintBottom_toBottomOf="@+id/view_library_vb"
-        app:layout_constraintEnd_toStartOf="@+id/view_library_vb"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editBook"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintBottom_toBottomOf="@+id/view_library_vb_db"
+        app:layout_constraintEnd_toStartOf="@+id/view_library_vb_db"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

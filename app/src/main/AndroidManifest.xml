@@ -32,6 +32,9 @@
             android:name=".ViewBook"
             android:parentActivityName=".ViewLibrary" />
         <activity android:name=".SetStatus" />
+        <activity
+            android:name=".ViewBookDatabase"
+            android:parentActivityName=".SearchDatabase" />
     </application>
 
 </manifest>

@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,7 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class ViewLibraryAdapter extends RecyclerView.Adapter<ViewLibraryAdapter.LibraryViewHolder> implements ViewLibraryAdapterDelete {
+public class ViewLibraryAdapter extends RecyclerView.Adapter<ViewLibraryAdapter.LibraryViewHolder> implements Filterable {
 
     ArrayList<BookBuzzDataModel> library;
     ArrayList<BookBuzzDataModel> fullLibrary;
@@ -31,7 +32,7 @@ public class ViewLibraryAdapter extends RecyclerView.Adapter<ViewLibraryAdapter.
         fullLibrary = new ArrayList<>(library);
     }
 
-    @Override
+
     public void setCriteria(String criteria) {
         this.criteria = criteria;
     }

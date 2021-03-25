@@ -48,6 +48,7 @@ public class ViewBook extends AppCompatActivity {
         editBook = findViewById(R.id.editBook);
         setBookDetails();
 
+
         editBook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

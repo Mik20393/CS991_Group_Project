@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -22,6 +23,9 @@ public class SearchDatabaseAdapter extends RecyclerView.Adapter<SearchDatabaseAd
     ArrayList<BookBuzzDataModel> fullDatabase;
     Context context;
 
+    public interface OnItemClickListener{
+        void onItemClick(int position);
+    }
     public SearchDatabaseAdapter(Context ct, ArrayList<BookBuzzDataModel> database) {
         this.criteria = "title";
         context = ct;
@@ -54,7 +58,15 @@ public class SearchDatabaseAdapter extends RecyclerView.Adapter<SearchDatabaseAd
         holder.searchDBLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(context, ViewBookDatabase.class);
+                intent.putExtra("isbn", positionBook.getIsbn());
+                context.startActivity(intent);
 
+            }
+        });
+        holder.addToLibrary.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 String db = "db";
                 Intent intent = new Intent(context, EnterBookDetails.class);
                 intent.putExtra("isbn",positionBook.getIsbn());
@@ -75,10 +87,12 @@ public class SearchDatabaseAdapter extends RecyclerView.Adapter<SearchDatabaseAd
         TextView book_title_txt, book_author_txt, book_status_txt, bookmark_txt, isbn_txt;
         ImageView searchDBImageView;
         ConstraintLayout searchDBLayout;
+        ImageButton addToLibrary;
 
 
         public DatabaseViewHolder(@NonNull View itemView) {
             super(itemView);
+            addToLibrary = itemView.findViewById(R.id.addToLibrary);
             book_title_txt = itemView.findViewById(R.id.book_title_txt_db);
             book_author_txt = itemView.findViewById(R.id.book_author_txt_db);
             book_status_txt = itemView.findViewById(R.id.book_status_txt_db);
@@ -87,6 +101,8 @@ public class SearchDatabaseAdapter extends RecyclerView.Adapter<SearchDatabaseAd
             searchDBImageView = itemView.findViewById(R.id.searchDBImageView);
             searchDBLayout = itemView.findViewById(R.id.searchDBLayout);
             isbn_txt.setVisibility(View.GONE);
+
+
 
         }
     }

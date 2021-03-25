@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private Button setReminder;
     private Button view_library;
     private Button view_history;
+    private static Boolean firstOpen = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +34,14 @@ public class MainActivity extends AppCompatActivity {
         view_history = findViewById(R.id.view_read_history_button);
 
         setCurrentBook();
-        createUserLibrary();
-        createDatabase();
+
+        if(firstOpen==true) {
+            createUserLibrary();
+            createDatabase();
+            setFirstOpen(false);
+        }
+
+
 
         setReminder.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,7 +111,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(viewNotePageIntent);
     }
 
-
+    public void setFirstOpen(boolean first){
+        this.firstOpen = first;
+    }
 
     public void setCurrentBook() {
         BookBuzzDataModel currentBook = new BookBuzzDataModel("Hitchhikers Guide to the Galaxy", "ISBN-234566");
