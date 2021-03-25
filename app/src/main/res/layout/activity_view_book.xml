@@ -51,7 +51,7 @@
         app:layout_constraintTop_toBottomOf="@+id/author_txt" />
 
     <TextView
-        android:id="@+id/year_label_vb"
+        android:id="@+id/year_label"
         android:layout_width="wrap_content"
         android:layout_height="23dp"
         android:text="@string/published_label_vb"
@@ -98,7 +98,7 @@
         app:layout_constraintTop_toBottomOf="@+id/pages_txt_vb" />
 
     <TextView
-        android:id="@+id/status_label_vb"
+        android:id="@+id/status_label"
         android:layout_width="wrap_content"
         android:layout_height="19dp"
         android:layout_marginTop="5dp"
@@ -108,12 +108,12 @@
         app:layout_constraintBottom_toBottomOf="@+id/isbn_txt_vb"
         app:layout_constraintEnd_toStartOf="@+id/status_txt_vb"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/year_label_vb"
-        app:layout_constraintTop_toBottomOf="@+id/year_label_vb"
+        app:layout_constraintStart_toStartOf="@+id/year_label"
+        app:layout_constraintTop_toBottomOf="@+id/year_label"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/removeBook"
+        android:id="@+id/addToLibraryVBD"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -144,8 +144,8 @@
         android:text="Bookmark"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/textView6"
-        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        app:layout_constraintStart_toStartOf="@+id/isbn_txt"
+        app:layout_constraintTop_toBottomOf="@+id/isbn_txt"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
@@ -170,7 +170,7 @@
         app:layout_constraintTop_toBottomOf="@+id/status_txt_vb" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/isbn_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
@@ -178,8 +178,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/isbn_txt_vb"
         app:layout_constraintEnd_toStartOf="@+id/isbn_txt_vb"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/status_label_vb"
-        app:layout_constraintTop_toBottomOf="@+id/status_label_vb"
+        app:layout_constraintStart_toStartOf="@+id/status_label"
+        app:layout_constraintTop_toBottomOf="@+id/status_label"
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
@@ -198,7 +198,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Page No."
-        app:layout_constraintBottom_toTopOf="@+id/removeBook"
+        app:layout_constraintBottom_toTopOf="@+id/addToLibraryVBD"
         app:layout_constraintEnd_toEndOf="@+id/editBookmark"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/editBookmark"

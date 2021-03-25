@@ -22,6 +22,7 @@ public class SearchDatabaseAdapter extends RecyclerView.Adapter<SearchDatabaseAd
     ArrayList<BookBuzzDataModel> fullDatabase;
     Context context;
 
+
     public SearchDatabaseAdapter(Context ct, ArrayList<BookBuzzDataModel> database) {
         this.criteria = "title";
         context = ct;
@@ -31,11 +32,12 @@ public class SearchDatabaseAdapter extends RecyclerView.Adapter<SearchDatabaseAd
     public void setCriteria(String criteria){
         this.criteria = criteria;
     }
+
     @NonNull
     @Override
     public DatabaseViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.view_library_row, parent, false);
+        View view = inflater.inflate(R.layout.search_database_row, parent, false);
         return new DatabaseViewHolder(view);
     }
 
@@ -47,13 +49,22 @@ public class SearchDatabaseAdapter extends RecyclerView.Adapter<SearchDatabaseAd
         holder.searchDBImageView.setImageResource(positionBook.getImage());
         holder.book_title_txt.setText(positionBook.getCurrentBookName());
         holder.book_author_txt.setText(positionBook.getAuthor());
+        holder.genre_txt.setText(positionBook.getGenre());
         holder.isbn_txt.setText(positionBook.getIsbn());
 
 
         holder.searchDBLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(context, ViewBookDatabase.class);
+                intent.putExtra("isbn", positionBook.getIsbn());
+                context.startActivity(intent);
 
+            }
+        });
+        holder.addToLibrary.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 String db = "db";
                 Intent intent = new Intent(context, EnterBookDetails.class);
                 intent.putExtra("isbn",positionBook.getIsbn());
@@ -71,21 +82,24 @@ public class SearchDatabaseAdapter extends RecyclerView.Adapter<SearchDatabaseAd
 
     public class DatabaseViewHolder extends RecyclerView.ViewHolder {
 
-        TextView book_title_txt, book_author_txt, book_status_txt, bookmark_txt, isbn_txt;
+        TextView book_title_txt, book_author_txt, genre_txt, isbn_txt;
         ImageView searchDBImageView;
         ConstraintLayout searchDBLayout;
+        ImageView addToLibrary;
 
 
         public DatabaseViewHolder(@NonNull View itemView) {
             super(itemView);
-            book_title_txt = itemView.findViewById(R.id.book_title_txt_db);
-            book_author_txt = itemView.findViewById(R.id.book_author_txt_db);
-            book_status_txt = itemView.findViewById(R.id.book_status_txt_db);
-            bookmark_txt = itemView.findViewById(R.id.book_bookmark_txt_db);
+            addToLibrary = itemView.findViewById(R.id.addToLibrary);
+            book_title_txt = itemView.findViewById(R.id.book_title_txt_db_row);
+            book_author_txt = itemView.findViewById(R.id.book_author_txt_db_row);
             isbn_txt = itemView.findViewById(R.id.book_isbn_txt);
+            genre_txt = itemView.findViewById(R.id.book_genre_txt_db_row);
             searchDBImageView = itemView.findViewById(R.id.searchDBImageView);
             searchDBLayout = itemView.findViewById(R.id.searchDBLayout);
             isbn_txt.setVisibility(View.GONE);
+
+
 
         }
     }
