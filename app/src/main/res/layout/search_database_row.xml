@@ -84,7 +84,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 tools:visibility="gone" />
 
-            <ImageButton
+            <ImageView
                 android:id="@+id/addToLibrary"
                 android:layout_width="60dp"
                 android:layout_height="54dp"

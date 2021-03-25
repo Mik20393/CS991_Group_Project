@@ -23,9 +23,7 @@ public class SearchDatabaseAdapter extends RecyclerView.Adapter<SearchDatabaseAd
     ArrayList<BookBuzzDataModel> fullDatabase;
     Context context;
 
-    public interface OnItemClickListener{
-        void onItemClick(int position);
-    }
+
     public SearchDatabaseAdapter(Context ct, ArrayList<BookBuzzDataModel> database) {
         this.criteria = "title";
         context = ct;
@@ -40,7 +38,7 @@ public class SearchDatabaseAdapter extends RecyclerView.Adapter<SearchDatabaseAd
     @Override
     public DatabaseViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.view_library_row, parent, false);
+        View view = inflater.inflate(R.layout.search_database_row, parent, false);
         return new DatabaseViewHolder(view);
     }
 
@@ -87,7 +85,7 @@ public class SearchDatabaseAdapter extends RecyclerView.Adapter<SearchDatabaseAd
         TextView book_title_txt, book_author_txt, book_status_txt, bookmark_txt, isbn_txt;
         ImageView searchDBImageView;
         ConstraintLayout searchDBLayout;
-        ImageButton addToLibrary;
+        ImageView addToLibrary;
 
 
         public DatabaseViewHolder(@NonNull View itemView) {
