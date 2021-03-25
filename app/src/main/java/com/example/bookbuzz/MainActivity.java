@@ -194,7 +194,7 @@ public class MainActivity extends AppCompatActivity {
         lordOfLight.setImage(R.drawable.lord_of_light);
         lordOfLight.setPages("400");
         lordOfLight.setGenre("SciFi");
-        grapesOfWrath.setYear("1923");
+        lordOfLight.setYear("1923");
 
         BookBuzzDataModel restaurantAtEOU = new BookBuzzDataModel("Restaurant at the End of the Universe", "ISBN-14356");
         restaurantAtEOU.setImage(R.drawable.restaurant_at_the_end_of_the_universe);

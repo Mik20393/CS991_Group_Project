@@ -113,7 +113,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/removeBook"
+        android:id="@+id/addToLibraryVBD"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -198,7 +198,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Page No."
-        app:layout_constraintBottom_toTopOf="@+id/removeBook"
+        app:layout_constraintBottom_toTopOf="@+id/addToLibraryVBD"
         app:layout_constraintEnd_toEndOf="@+id/editBookmark"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/editBookmark"

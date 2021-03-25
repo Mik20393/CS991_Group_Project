@@ -32,7 +32,7 @@ public class ViewBook extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_book);
 
-        removeBook = findViewById(R.id.removeBook);
+        removeBook = findViewById(R.id.addToLibraryVBD);
         bookPicture = findViewById(R.id.bookPicture);
         title = findViewById(R.id.title_txt_vb);
         status = findViewById(R.id.status_txt_vb);

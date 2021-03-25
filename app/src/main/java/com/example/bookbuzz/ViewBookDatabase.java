@@ -19,9 +19,8 @@ public class ViewBookDatabase extends AppCompatActivity {
     TextView published;
     TextView pages;
     TextView bookISBN;
-    Button viewLibrary;
-    Button home;
-    Button setReminder;
+    Button addToLibrary;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,37 +29,14 @@ public class ViewBookDatabase extends AppCompatActivity {
 
 
         bookPicture = findViewById(R.id.bookPictureDB);
-        title = findViewById(R.id.book_title_txt_db);
+        title = findViewById(R.id.title_txt_vb_db);
         genre = findViewById(R.id.genre_txt_vb_db);
         author = findViewById(R.id.author_txt_vb_db);
         published = findViewById(R.id.year_txt_vb_db);
         pages = findViewById(R.id.pages_txt_vb_db);
         bookISBN = findViewById(R.id.isbn_txt_vb_db);
-        home = findViewById(R.id.home__vb_db);
-        setReminder = findViewById(R.id.set_reminder_vb_db);
-        viewLibrary = findViewById(R.id.view_library_vb_db);
         setBookDetails();
 
-
-
-        home.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openHome();
-            }
-        });
-        viewLibrary.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openViewLibrary();
-            }
-        });
-        setReminder.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openSetReminder();
-            }
-        });
 
     }
 
