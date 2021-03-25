@@ -11,9 +11,15 @@ buildscript {
         // in the individual module build.gradle files
     }
 }
+//dependencies {
+//    implementation "com.readystatesoftware.sqliteasset:sqliteassethelper:+"
+//    implementation 'com.android.support:recyclerview-v7:26.1.0'
+//
+//}
 
 allprojects {
     repositories {
+        maven {url "https://jitpack.io"}
         google()
         jcenter()
     }

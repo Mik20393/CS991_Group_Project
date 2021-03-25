@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -17,12 +18,21 @@ public class ViewNotes extends AppCompatActivity {
     Button homeButton;
     Button viewLibrary;
     Button addNote;
+    ImageView imageView ;
 
     RecyclerView recyclerView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_notes);
+
+        imageView = findViewById(R.id.deleteButton);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
 
         TextView bookName = findViewById(R.id.textViewBookName);
         bookName.setText(DataUtility.getCurrentBook().getCurrentBookName());

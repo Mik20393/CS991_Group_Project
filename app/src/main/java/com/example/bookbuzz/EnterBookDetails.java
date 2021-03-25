@@ -80,9 +80,6 @@ public class EnterBookDetails extends AppCompatActivity {
     }
 
     public void addBook() {
-
-
-
         BookBuzzDataModel addedBook = new BookBuzzDataModel((enter_book_name.getText().toString()), isbn_entry.getText().toString());
         addedBook.setGenre(genre_entry.getText().toString());
         addedBook.setPages(page_number_entry.getText().toString());

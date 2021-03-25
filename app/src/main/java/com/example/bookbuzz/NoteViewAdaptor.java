@@ -40,7 +40,17 @@ public class NoteViewAdaptor extends RecyclerView.Adapter<NoteViewAdaptor.NoteVi
         String toInsertText = text + "\n";
         holder.dateTextView.setText(date);
         holder.noteTextView.setText(toInsertText);
+//        holder.setListener();
     }
+
+//    public void setListener(){
+//        imageDelete.setOnCLickListner(NoteViewHolder.this);
+//        imageThumb.setOnCLickListner(NoteViewHolder.this);
+//    }
+
+
+//    @Override
+//    public void onclick
 
     /***
      * method will count of books notes.
