@@ -50,11 +50,6 @@ public class AddNewBook extends AppCompatActivity {
             }
         });
 
-        scanBook.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {openScanBook(); }
-        });
-
     }
 
     /***
@@ -73,7 +68,8 @@ public class AddNewBook extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void openScanBook() {
-        Intent intent = new Intent(this, ScanBook.class);
+    public void openScanBook(View view) {
+        Intent addBookIntent = new Intent(this, ScanBook.class);
+        startActivity(addBookIntent);
     }
 }
