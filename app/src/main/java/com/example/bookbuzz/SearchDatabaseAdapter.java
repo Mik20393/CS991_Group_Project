@@ -135,6 +135,24 @@ public class SearchDatabaseAdapter extends RecyclerView.Adapter<SearchDatabaseAd
                             filteredDatabase.add(book);
                         }
                     }
+                } else if (criteria.equals("genre")) {
+                    for (BookBuzzDataModel book : fullDatabase) {
+                        if (book.getGenre().toLowerCase().contains(filterPattern)) {
+                            filteredDatabase.add(book);
+                        }
+                    }
+                } else if (criteria.equals("year")) {
+                    for (BookBuzzDataModel book : fullDatabase) {
+                        if (book.getYear().toLowerCase().contains(filterPattern)) {
+                            filteredDatabase.add(book);
+                        }
+                    }
+                } else if (criteria.equals("isbn")) {
+                    for (BookBuzzDataModel book : fullDatabase) {
+                        if (book.getIsbn().toLowerCase().contains(filterPattern)) {
+                            filteredDatabase.add(book);
+                        }
+                    }
                 }
 
             }

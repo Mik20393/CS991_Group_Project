@@ -67,6 +67,18 @@ public class ViewLibrary extends AppCompatActivity {
             case R.id.library_by_title:
                 viewLibraryAdapter.setCriteria("title");
                 return true;
+            case R.id.library_by_genre:
+                viewLibraryAdapter.setCriteria("genre");
+                return true;
+            case R.id.library_by_year:
+                viewLibraryAdapter.setCriteria("year");
+                return true;
+            case R.id.library_by_status:
+                viewLibraryAdapter.setCriteria("status");
+                return true;
+            case R.id.library_by_isbn:
+                viewLibraryAdapter.setCriteria("isbn");
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }

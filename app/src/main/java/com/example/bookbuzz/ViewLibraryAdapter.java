@@ -113,13 +113,35 @@ public class ViewLibraryAdapter extends RecyclerView.Adapter<ViewLibraryAdapter.
                     for (BookBuzzDataModel book : fullLibrary) {
                         if (book.getCurrentBookName().toLowerCase().contains(filterPattern)) {
                             filteredLibrary.add(book);
-
-
                         }
                     }
                 } else if (criteria.equals("author")) {
                     for (BookBuzzDataModel book : fullLibrary) {
                         if (book.getAuthor().toLowerCase().contains(filterPattern)) {
+                            filteredLibrary.add(book);
+                        }
+                    }
+                } else if (criteria.equals("status")) {
+                    for (BookBuzzDataModel book : fullLibrary) {
+                        if (book.getStatus().toLowerCase().contains(filterPattern)) {
+                            filteredLibrary.add(book);
+                        }
+                    }
+                } else if (criteria.equals("genre")) {
+                    for (BookBuzzDataModel book : fullLibrary) {
+                        if (book.getGenre().toLowerCase().contains(filterPattern)) {
+                            filteredLibrary.add(book);
+                        }
+                    }
+                } else if (criteria.equals("year")) {
+                    for (BookBuzzDataModel book : fullLibrary) {
+                        if (book.getYear().toLowerCase().contains(filterPattern)) {
+                            filteredLibrary.add(book);
+                        }
+                    }
+                } else if (criteria.equals("isbn")) {
+                    for (BookBuzzDataModel book : fullLibrary) {
+                        if (book.getIsbn().toLowerCase().contains(filterPattern)) {
                             filteredLibrary.add(book);
                         }
                     }

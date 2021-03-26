@@ -72,6 +72,15 @@ public class SearchDatabase extends AppCompatActivity {
             case R.id.by_title:
                 searchDatabaseAdapter.setCriteria("title");
                 return true;
+            case R.id.by_genre:
+                searchDatabaseAdapter.setCriteria("genre");
+                return true;
+            case R.id.by_year:
+                searchDatabaseAdapter.setCriteria("year");
+                return true;
+            case R.id.by_isbn:
+                searchDatabaseAdapter.setCriteria("isbn");
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
