@@ -23,11 +23,11 @@ public class ViewNotes extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_notes);
-
+        String isbn = getIntent().getStringExtra("isbn");
         TextView bookName = findViewById(R.id.textViewBookName);
         bookName.setText(DataUtility.getCurrentBook().getCurrentBookName());
 
-        List<NoteModel> notes = DataUtility.getCurrentBook().getNotes();
+        List<NoteModel> notes = DataUtility.getABookByIsbn(isbn).getNotes();
         NoteViewAdaptor noteViewAdaptor = new NoteViewAdaptor(this, notes);
 
         recyclerView = findViewById(R.id.noteRecycleView);
@@ -58,7 +58,9 @@ public class ViewNotes extends AppCompatActivity {
         addNote.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String isbn = getIntent().getStringExtra("isbn");
                 Intent addNoteButtonIntent = new Intent(ViewNotes.this, AddNote.class);
+                addNoteButtonIntent.putExtra("isbn", isbn);
                 startActivity(addNoteButtonIntent);
             }
         });

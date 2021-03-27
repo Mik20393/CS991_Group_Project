@@ -170,9 +170,18 @@ public class ViewBook extends AppCompatActivity {
     }
     public void openAddNote() {
 
+        String isbn = this.bookISBN.getText().toString();
+        Intent intent = new Intent(this, AddNote.class);
+        intent.putExtra("isbn", isbn);
+        startActivity(intent);
+
     }
     public void openViewNotes() {
 
+        String isbn = this.bookISBN.getText().toString();
+        Intent intent = new Intent(this, ViewNotes.class);
+        intent.putExtra("isbn", isbn);
+        startActivity(intent);
     }
 
 }

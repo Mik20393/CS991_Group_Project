@@ -34,6 +34,10 @@ public class ViewLibrary extends AppCompatActivity {
         libraryRecyclerView.setAdapter(viewLibraryAdapter);
         libraryRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        if (getIntent().hasExtra("cb")) {
+            viewLibraryAdapter.setCB(true);
+        }
+
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

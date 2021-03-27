@@ -25,7 +25,9 @@ public class AddNote extends AppCompatActivity {
         setContentView(R.layout.activity_add_note);
 
         TextView bookTitle = findViewById(R.id.book_title_add_note);
-        bookTitle.setText(DataUtility.getCurrentBook().getCurrentBookName());
+        String isbn = getIntent().getStringExtra("isbn");
+
+        bookTitle.setText(DataUtility.getABookByIsbn(isbn).getCurrentBookName());
         initializedListner();
 
         Button homeButton = findViewById(R.id.homeButton);
@@ -50,7 +52,10 @@ public class AddNote extends AppCompatActivity {
         viewNote.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String isbn = getIntent().getStringExtra("isbn");
+
                 Intent viewnoteIntent = new Intent(AddNote.this, ViewNotes.class);
+                viewnoteIntent.putExtra("isbn", isbn);
                 startActivity(viewnoteIntent);
             }
         });
@@ -67,11 +72,12 @@ public class AddNote extends AppCompatActivity {
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String isbn = getIntent().getStringExtra("isbn");
                 Log.i("on save", "clicking note save");
                 String userNote = enterText.getText().toString();
                 NoteModel currentNote = new NoteModel(currentDate, userNote);
-                BookBuzzDataModel currentbook = DataUtility.getCurrentBook();
-                currentbook.getNotes().add(currentNote);
+                BookBuzzDataModel book = DataUtility.getABookByIsbn(isbn);
+                book.getNotes().add(currentNote);
                 Toast.makeText(AddNote.this, "Note has been added successfully!!!" + "\n",
                         Toast.LENGTH_SHORT).show();
             }
