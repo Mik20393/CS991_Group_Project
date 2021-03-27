@@ -22,6 +22,7 @@ public class ViewLibraryAdapter extends RecyclerView.Adapter<ViewLibraryAdapter.
     ArrayList<BookBuzzDataModel> fullLibrary;
     Context context;
     String criteria;
+    Boolean cb;
 
 
 
@@ -30,11 +31,16 @@ public class ViewLibraryAdapter extends RecyclerView.Adapter<ViewLibraryAdapter.
         this.library = library;
         this.criteria = "title";
         fullLibrary = new ArrayList<>(library);
+        this.cb = false;
     }
 
 
     public void setCriteria(String criteria) {
         this.criteria = criteria;
+    }
+
+    public void setCB(Boolean cb){
+        this.cb = cb;
     }
 
     @NonNull
@@ -58,9 +64,17 @@ public class ViewLibraryAdapter extends RecyclerView.Adapter<ViewLibraryAdapter.
         holder.viewLibraryLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, ViewBook.class);
-                intent.putExtra("isbn", positionBook.getIsbn());
-                context.startActivity(intent);
+
+                if (cb) {
+
+                    DataUtility.setCurrentBook(positionBook);
+                    Intent intent = new Intent(context, MainActivity.class);
+                    context.startActivity(intent);
+                } else {
+                    Intent intent = new Intent(context, ViewBook.class);
+                    intent.putExtra("isbn", positionBook.getIsbn());
+                    context.startActivity(intent);
+                }
             }
         });
     }
@@ -113,13 +127,35 @@ public class ViewLibraryAdapter extends RecyclerView.Adapter<ViewLibraryAdapter.
                     for (BookBuzzDataModel book : fullLibrary) {
                         if (book.getCurrentBookName().toLowerCase().contains(filterPattern)) {
                             filteredLibrary.add(book);
-
-
                         }
                     }
                 } else if (criteria.equals("author")) {
                     for (BookBuzzDataModel book : fullLibrary) {
                         if (book.getAuthor().toLowerCase().contains(filterPattern)) {
+                            filteredLibrary.add(book);
+                        }
+                    }
+                } else if (criteria.equals("status")) {
+                    for (BookBuzzDataModel book : fullLibrary) {
+                        if (book.getStatus().toLowerCase().contains(filterPattern)) {
+                            filteredLibrary.add(book);
+                        }
+                    }
+                } else if (criteria.equals("genre")) {
+                    for (BookBuzzDataModel book : fullLibrary) {
+                        if (book.getGenre().toLowerCase().contains(filterPattern)) {
+                            filteredLibrary.add(book);
+                        }
+                    }
+                } else if (criteria.equals("year")) {
+                    for (BookBuzzDataModel book : fullLibrary) {
+                        if (book.getYear().toLowerCase().contains(filterPattern)) {
+                            filteredLibrary.add(book);
+                        }
+                    }
+                } else if (criteria.equals("isbn")) {
+                    for (BookBuzzDataModel book : fullLibrary) {
+                        if (book.getIsbn().toLowerCase().contains(filterPattern)) {
                             filteredLibrary.add(book);
                         }
                     }

@@ -121,7 +121,7 @@
             android:src="@drawable/life_the_universe_and_everything" />
 
         <Button
-            android:id="@+id/current_books_button"
+            android:id="@+id/current_book_button"
             android:layout_width="match_parent"
             android:layout_height="78dp"
 

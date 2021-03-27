@@ -26,6 +26,8 @@ public class ViewBook extends AppCompatActivity {
     Button editBook;
     Button home;
     Button setReminder;
+    Button addNote;
+    Button viewNotes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +48,8 @@ public class ViewBook extends AppCompatActivity {
         bookmark = findViewById(R.id.bookmark_btn);
         bookmarkPage = findViewById(R.id.editBookmark);
         editBook = findViewById(R.id.editBook);
+        viewNotes = findViewById(R.id.viewNotesVB);
+        addNote = findViewById(R.id.addNoteVB);
         setBookDetails();
 
 
@@ -86,6 +90,18 @@ public class ViewBook extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 openSetReminder();
+            }
+        });
+        viewNotes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openViewNotes();
+            }
+        });
+        addNote.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openAddNote();
             }
         });
 
@@ -150,6 +166,21 @@ public class ViewBook extends AppCompatActivity {
         Intent intent = new Intent(this, EnterBookDetails.class);
         intent.putExtra("isbn", isbn);
         intent.putExtra("edit",edit);
+        startActivity(intent);
+    }
+    public void openAddNote() {
+
+        String isbn = this.bookISBN.getText().toString();
+        Intent intent = new Intent(this, AddNote.class);
+        intent.putExtra("isbn", isbn);
+        startActivity(intent);
+
+    }
+    public void openViewNotes() {
+
+        String isbn = this.bookISBN.getText().toString();
+        Intent intent = new Intent(this, ViewNotes.class);
+        intent.putExtra("isbn", isbn);
         startActivity(intent);
     }
 

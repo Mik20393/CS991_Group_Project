@@ -248,4 +248,23 @@
         app:layout_constraintTop_toBottomOf="@+id/editBook"
         app:layout_constraintVertical_bias="1.0" />
 
+    <Button
+        android:id="@+id/viewNotesVB"
+        android:layout_width="88dp"
+        android:layout_height="61dp"
+        android:text="View Notes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/bookPicture"
+        app:layout_constraintTop_toTopOf="@+id/bookPicture" />
+
+    <Button
+        android:id="@+id/addNoteVB"
+        android:layout_width="93dp"
+        android:layout_height="59dp"
+        android:text="Add Note"
+        app:layout_constraintEnd_toEndOf="@+id/viewNotesVB"
+        app:layout_constraintStart_toStartOf="@+id/viewNotesVB"
+        app:layout_constraintTop_toBottomOf="@+id/viewNotesVB" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

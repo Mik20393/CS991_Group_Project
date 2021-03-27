@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
@@ -19,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
     private Button setReminder;
     private Button view_library;
     private Button view_history;
+    private ImageView currentBookImage;
+    private Button setCurrentBook;
     private static Boolean firstOpen = true;
 
     @Override
@@ -33,16 +36,31 @@ public class MainActivity extends AppCompatActivity {
         setReminder = findViewById(R.id.set_reminder_button);
         view_library = findViewById(R.id.view_library_button);
         view_history = findViewById(R.id.view_read_history_button);
+        currentBookImage = findViewById(R.id.current_book);
+        setCurrentBook = findViewById(R.id.current_book_button);
 
-        setCurrentBook();
 
-        if(firstOpen==true) {
+        if(firstOpen) {
+
             createUserLibrary();
+
             createDatabase();
+
+            BookBuzzDataModel lanark = new BookBuzzDataModel("Lanark", "ISBN-64321");
+            lanark.setAuthor("Alasdair Gray");
+            lanark.setImage(R.drawable.lanark_book);
+            lanark.setPages("300");
+            lanark.setYear("1981");
+            lanark.setStatus("Reading");
+            lanark.setBookmark("50");
+
+            DataUtility.addABook(lanark);
+            DataUtility.setCurrentBook(lanark);
             setFirstOpen(false);
+
         }
 
-
+        currentBookImage.setImageResource(DataUtility.getCurrentBook().getImage());
 
 
 
@@ -56,7 +74,21 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(setReminderIntent);
             }
         });
-
+        currentBookImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToViewBook();
+            }
+        });
+        setCurrentBook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String cb = "cb";
+                Intent setCurrentBookIntent = new Intent(MainActivity.this, ViewLibrary.class);
+                setCurrentBookIntent.putExtra("cb", cb);
+                startActivity(setCurrentBookIntent);
+            }
+        });
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -108,12 +140,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void createNewNote(){
+        String isbn = DataUtility.getCurrentBook().getIsbn();
         Intent createNoteIntent = new Intent(this, AddNote.class);
+        createNoteIntent.putExtra("isbn", isbn);
         startActivity(createNoteIntent);
     }
 
     public void goToNotes(){
+        String isbn = DataUtility.getCurrentBook().getIsbn();
         Intent viewNotePageIntent = new Intent(this, ViewNotes.class);
+        viewNotePageIntent.putExtra("isbn", isbn);
         startActivity(viewNotePageIntent);
     }
 
@@ -121,13 +157,7 @@ public class MainActivity extends AppCompatActivity {
         this.firstOpen = first;
     }
 
-    public void setCurrentBook() {
-        BookBuzzDataModel currentBook = new BookBuzzDataModel("Hitchhikers Guide to the Galaxy", "ISBN-234566");
-        currentBook.setImage(R.drawable.hitchhikers_guide);
-        currentBook.setAuthor("Douglas Adams");
-        DataUtility.addABook(currentBook);
-        DataUtility.setCurrentBook(currentBook);
-    }
+
     public void viewLibrary() {
         Intent intent = new Intent(this, ViewLibrary.class);
         startActivity(intent);
@@ -135,6 +165,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void viewHistory() {
         Intent intent = new Intent(this, ReadHistory.class);
+        startActivity(intent);
+    }
+    public void goToViewBook() {
+        String isbn = DataUtility.getCurrentBook().getIsbn();
+        Intent intent = new Intent(this, ViewBook.class);
+        intent.putExtra("isbn", isbn);
         startActivity(intent);
     }
 
@@ -147,13 +183,6 @@ public class MainActivity extends AppCompatActivity {
         hitchhikersGuideToTheGalaxy.setStatus("Read");
         hitchhikersGuideToTheGalaxy.setBookmark("50");
 
-        BookBuzzDataModel lanark = new BookBuzzDataModel("Lanark", "ISBN-64321");
-        lanark.setAuthor("Alasdair Gray");
-        lanark.setImage(R.drawable.lanark_book);
-        lanark.setPages("300");
-        lanark.setYear("1981");
-        lanark.setStatus("Reading");
-        lanark.setBookmark("50");
 
         BookBuzzDataModel braveNewWorld = new BookBuzzDataModel("Brave New World", "ISBN-74321");
         braveNewWorld.setImage(R.drawable.brave_new_world);
@@ -164,7 +193,6 @@ public class MainActivity extends AppCompatActivity {
         braveNewWorld.setBookmark("0");
 
         DataUtility.addABook(hitchhikersGuideToTheGalaxy);
-        DataUtility.addABook(lanark);
         DataUtility.addABook(braveNewWorld);
 
 

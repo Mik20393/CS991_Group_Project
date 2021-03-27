@@ -127,7 +127,7 @@ public class EnterBookDetails extends AppCompatActivity {
             addedBook.setGenre(genre_entry.getText().toString());
             addedBook.setPages(page_number_entry.getText().toString());
             addedBook.setYear(year_entry.getText().toString());
-            addedBook.setImage(R.drawable.hitchhikers_guide);
+            addedBook.setImage(R.drawable.default_cover_art);
             DataUtility.addABook(addedBook);
         }
         openSetStatus();

@@ -17,6 +17,18 @@
 
             <item android:id="@+id/library_by_title"
                 android:title="Title"/>
+
+            <item android:id="@+id/library_by_genre"
+                android:title="Genre"/>
+
+            <item android:id="@+id/library_by_status"
+                android:title="Status"/>
+
+            <item android:id="@+id/library_by_year"
+                android:title="Year"/>
+
+            <item android:id="@+id/library_by_isbn"
+                android:title="ISBN"/>
         </menu>
     </item>
 </menu>
