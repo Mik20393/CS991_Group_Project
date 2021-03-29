@@ -36,10 +36,10 @@ public class ViewLibrary extends AppCompatActivity {
         library = DataUtility.getBooks();
         libraryRecyclerView = findViewById(R.id.searchDatabaserecyclerView);
 
-        readHistory = findViewById(R.id.view_read_history_button);
-        setReminder = findViewById(R.id.set_reminder_vb);
-        viewNotes = findViewById(R.id.view_notes_vb);
-        home = findViewById(R.id.home__vb);
+        readHistory = findViewById(R.id.view_read_history_vl);
+        setReminder = findViewById(R.id.set_reminder_vl);
+        viewNotes = findViewById(R.id.view_notes_vl);
+        home = findViewById(R.id.home__vl);
 
         viewLibraryAdapter = new ViewLibraryAdapter(this, library);
         libraryRecyclerView.setAdapter(viewLibraryAdapter);
