@@ -56,13 +56,13 @@
             android:textSize="12sp" />
 
         <Button
-            android:id="@+id/view_library_vb"
+            android:id="@+id/view_notes_vb"
             android:layout_width="1dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:drawableTop="@drawable/ic_baseline_library_books_24"
+            android:drawableTop="@drawable/ic_baseline_add_box_24"
 
-            android:text="View Library"
+            android:text="View Notes"
             android:textSize="12sp" />
     </LinearLayout>
 

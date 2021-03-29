@@ -1,9 +1,12 @@
 package com.example.bookbuzz;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.SearchView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +22,11 @@ public class ViewLibrary extends AppCompatActivity {
     ViewLibraryAdapter viewLibraryAdapter;
     ArrayList<BookBuzzDataModel> library;
 
+    Button readHistory;
+    Button setReminder;
+    Button viewNotes;
+    Button home;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +36,10 @@ public class ViewLibrary extends AppCompatActivity {
         library = DataUtility.getBooks();
         libraryRecyclerView = findViewById(R.id.searchDatabaserecyclerView);
 
-
+        readHistory = findViewById(R.id.view_read_history_button);
+        setReminder = findViewById(R.id.set_reminder_vb);
+        viewNotes = findViewById(R.id.view_notes_vb);
+        home = findViewById(R.id.home__vb);
 
         viewLibraryAdapter = new ViewLibraryAdapter(this, library);
         libraryRecyclerView.setAdapter(viewLibraryAdapter);
@@ -37,6 +48,36 @@ public class ViewLibrary extends AppCompatActivity {
         if (getIntent().hasExtra("cb")) {
             viewLibraryAdapter.setCB(true);
         }
+
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openHome();
+            }
+        });
+        viewNotes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openViewNotes();
+            }
+        });
+        setReminder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openSetReminder();
+            }
+        });
+        readHistory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openReadHistory();
+            }
+        });
+
+
+
+
+
 
     }
     @Override
@@ -62,6 +103,31 @@ public class ViewLibrary extends AppCompatActivity {
         return true;
 
     }
+
+
+    public void openViewNotes(){
+        String isbn = DataUtility.getCurrentBook().getIsbn();
+        Intent viewNotePageIntent = new Intent(this, ViewNotes.class);
+        viewNotePageIntent.putExtra("isbn", isbn);
+        startActivity(viewNotePageIntent);
+    }
+
+    public void openHome() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void openSetReminder() {
+        Intent intent = new Intent(this, Reminder.class);
+        startActivity(intent);
+    }
+
+    public void openReadHistory(){
+        Intent intent = new Intent(this, ReadHistory.class);
+        startActivity(intent);
+    }
+
+
 
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
