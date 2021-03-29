@@ -28,6 +28,7 @@ public class ViewBook extends AppCompatActivity {
     Button setReminder;
     Button addNote;
     Button viewNotes;
+    Button viewHistory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +51,7 @@ public class ViewBook extends AppCompatActivity {
         editBook = findViewById(R.id.editBook);
         viewNotes = findViewById(R.id.viewNotesVB);
         addNote = findViewById(R.id.addNoteVB);
+        viewHistory = findViewById(R.id.view_read_history_button);
         setBookDetails();
 
 
@@ -103,8 +105,12 @@ public class ViewBook extends AppCompatActivity {
             public void onClick(View view) {
                 openAddNote();
             }
-        });
 
+        });
+        viewHistory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {viewHistory();}
+        });
     }
 
     private void setBookDetails() {
@@ -127,6 +133,11 @@ public class ViewBook extends AppCompatActivity {
         String isbn = getIntent().getStringExtra("isbn");
         DataUtility.removeBook(isbn);
         goBackToLibrary();
+    }
+
+    public void viewHistory() {
+        Intent intent = new Intent(this, ReadHistory.class);
+        startActivity(intent);
     }
 
 
