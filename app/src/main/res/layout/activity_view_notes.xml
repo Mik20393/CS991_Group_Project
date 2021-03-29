@@ -49,36 +49,48 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/homeFromViewNoteButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginBottom="20dp"
-        android:text="Home"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/myLibraryFromNotebutton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:text="View Library"
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="84dp"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="@+id/noteRecycleView"
-        app:layout_constraintEnd_toStartOf="@+id/addNoteFromViewNoteButton3"
-        app:layout_constraintStart_toEndOf="@+id/homeFromViewNoteButton" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-    <Button
-        android:id="@+id/addNoteFromViewNoteButton3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="20dp"
-        android:text="Add Note"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <Button
+            android:id="@+id/view_read_history_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/ic_baseline_history_24"
+            android:text="@string/view_read_history"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/addNoteFromViewNoteButton3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Add Note"
+            android:textSize="12sp"
+            android:drawableTop="@drawable/ic_add_book" />
+
+        <Button
+            android:id="@+id/homeFromViewNoteButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/ic_baseline_home_24"
+            android:text="Home" />
+
+        <Button
+            android:id="@+id/myLibraryFromNotebutton2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:drawableTop="@drawable/ic_baseline_library_books_24"
+            android:layout_weight="1"
+            android:text="View Library" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
