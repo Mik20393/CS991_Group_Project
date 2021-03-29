@@ -23,37 +23,25 @@
 
     <EditText
         android:id="@+id/add_book_search"
-        android:layout_width="214dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="25dp"
+        android:layout_width="242dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="@string/find_book_hint"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-    <Spinner
-        android:id="@+id/findBookSpinner"
-        android:layout_width="115dp"
-        android:layout_height="47dp"
-        app:layout_constraintBottom_toBottomOf="@+id/add_book_search"
         app:layout_constraintEnd_toStartOf="@+id/search_btn_add_book"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/add_book_search"
-        app:layout_constraintTop_toTopOf="@+id/add_book_search"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toStartOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <ImageButton
         android:id="@+id/search_btn_add_book"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginRight="12dp"
-        app:layout_constraintBottom_toBottomOf="@+id/findBookSpinner"
+        android:layout_marginEnd="84dp"
+        android:layout_marginRight="84dp"
+        app:layout_constraintBottom_toBottomOf="@+id/add_book_search"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/findBookSpinner"
+        app:layout_constraintTop_toTopOf="@+id/add_book_search"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@android:drawable/ic_menu_search" />
 
@@ -61,13 +49,11 @@
         android:id="@+id/textView3"
         android:layout_width="96dp"
         android:layout_height="27dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         android:layout_marginTop="76dp"
         android:text="@string/find_book_label"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/scanBarcode"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button

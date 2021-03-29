@@ -26,14 +26,10 @@ public class AddNewBook extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_new_book);
         search = findViewById(R.id.search_btn_add_book);
-        findBookSpinner = findViewById(R.id.findBookSpinner);
         addManually = findViewById(R.id.addManually);
         scanBook = findViewById(R.id.scanBarcode);
 
-        ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(AddNewBook.this, android.R.layout.simple_list_item_1,
-                getResources().getStringArray(R.array.find_book_spinner));
-        myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        findBookSpinner.setAdapter(myAdapter);
+
 
 
         search.setOnClickListener(new View.OnClickListener() {
