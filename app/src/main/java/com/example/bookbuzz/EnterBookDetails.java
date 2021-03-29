@@ -5,8 +5,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import static android.widget.Toast.makeText;
 
 public class EnterBookDetails extends AppCompatActivity {
 
@@ -96,41 +99,80 @@ public class EnterBookDetails extends AppCompatActivity {
 
     public void addBook() {
 
-        if(getIntent().hasExtra("edit")){
 
-            String isbn = getIntent().getStringExtra("isbn");
-            BookBuzzDataModel book = DataUtility.getABookByIsbn(isbn);
-
-            book.setCurrentBookName(enter_book_name.getText().toString());
-            book.setIsbn(isbn_entry.getText().toString());
-            book.setAuthor(enter_author_name.getText().toString());
-            book.setYear(year_entry.getText().toString());
-            book.setPages(page_number_entry.getText().toString());
-            book.setGenre(genre_entry.getText().toString());
-        } if(getIntent().hasExtra("db")){
-
-            String isbn = getIntent().getStringExtra("isbn");
-            BookBuzzDataModel book = DataUtility.getBookByIsbnDB(isbn);
-            int coverPic = book.getImage();
-
-            BookBuzzDataModel addedBook = new BookBuzzDataModel((enter_book_name.getText().toString()), isbn_entry.getText().toString());
-            addedBook.setAuthor(enter_author_name.getText().toString());
-            addedBook.setGenre(genre_entry.getText().toString());
-            addedBook.setPages(page_number_entry.getText().toString());
-            addedBook.setYear(year_entry.getText().toString());
-            addedBook.setImage(coverPic);
-            DataUtility.addABook(addedBook);
-
+        if(enter_book_name.getText().toString().length() == 0) {
+            makeText(this, "Title field must not be left blank!", Toast.LENGTH_SHORT).show();
+        } else if(enter_author_name.getText().toString().length() == 0) {
+            makeText(this, "Author field must not be left blank!", Toast.LENGTH_SHORT).show();
+        } else if(isbn_entry.getText().toString().length() == 0) {
+            makeText(this, "ISBN field must not be left blank!", Toast.LENGTH_SHORT).show();
+        } else if (page_number_entry.getText().toString().length() == 0) {
+            makeText(this, "Pages field must not be left blank!", Toast.LENGTH_SHORT).show();
         } else {
-            BookBuzzDataModel addedBook = new BookBuzzDataModel((enter_book_name.getText().toString()), isbn_entry.getText().toString());
-            addedBook.setAuthor(enter_author_name.getText().toString());
-            addedBook.setGenre(genre_entry.getText().toString());
-            addedBook.setPages(page_number_entry.getText().toString());
-            addedBook.setYear(year_entry.getText().toString());
-            addedBook.setImage(R.drawable.default_cover_art);
-            DataUtility.addABook(addedBook);
+
+            if (getIntent().hasExtra("edit")) {
+
+                String isbn = getIntent().getStringExtra("isbn");
+                BookBuzzDataModel book = DataUtility.getABookByIsbn(isbn);
+
+                book.setCurrentBookName(enter_book_name.getText().toString());
+                book.setIsbn(isbn_entry.getText().toString());
+                book.setAuthor(enter_author_name.getText().toString());
+
+                book.setPages(page_number_entry.getText().toString());
+
+
+                if(year_entry.getText().toString().length() == 0) {
+                    book.setYear("N/A");
+                } else {
+                    book.setYear(year_entry.getText().toString());
+                }
+
+                if(year_entry.getText().toString().length() == 0) {
+                    book.setGenre("N/A");
+                } else {
+                    book.setGenre(genre_entry.getText().toString());
+                }
+
+
+
+            } else if (getIntent().hasExtra("db")) {
+
+                String isbn = getIntent().getStringExtra("isbn");
+                BookBuzzDataModel book = DataUtility.getBookByIsbnDB(isbn);
+                int coverPic = book.getImage();
+
+                BookBuzzDataModel addedBook = new BookBuzzDataModel((enter_book_name.getText().toString()), isbn_entry.getText().toString());
+                addedBook.setAuthor(enter_author_name.getText().toString());
+                addedBook.setGenre(genre_entry.getText().toString());
+                addedBook.setPages(page_number_entry.getText().toString());
+                addedBook.setYear(year_entry.getText().toString());
+                addedBook.setImage(coverPic);
+                DataUtility.addABook(addedBook);
+
+            } else {
+                BookBuzzDataModel addedBook = new BookBuzzDataModel((enter_book_name.getText().toString()), isbn_entry.getText().toString());
+                addedBook.setAuthor(enter_author_name.getText().toString());
+                addedBook.setPages(page_number_entry.getText().toString());
+                addedBook.setImage(R.drawable.default_cover_art);
+
+                if(year_entry.getText().toString().length() == 0) {
+                    addedBook.setYear("N/A");
+                } else {
+                    addedBook.setYear(year_entry.getText().toString());
+                }
+
+                if(year_entry.getText().toString().length() == 0) {
+                    addedBook.setGenre("N/A");
+                } else {
+                    addedBook.setGenre(genre_entry.getText().toString());
+                }
+
+                DataUtility.addABook(addedBook);
+
+            }
+            openSetStatus();
         }
-        openSetStatus();
 
     }
 

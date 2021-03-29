@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
             lanark.setYear("1981");
             lanark.setStatus("Reading");
             lanark.setBookmark("50");
+            lanark.setGenre("Dystopian");
 
             DataUtility.addABook(lanark);
             DataUtility.setCurrentBook(lanark);
@@ -181,6 +182,7 @@ public class MainActivity extends AppCompatActivity {
         hitchhikersGuideToTheGalaxy.setPages("123");
         hitchhikersGuideToTheGalaxy.setYear("1970");
         hitchhikersGuideToTheGalaxy.setStatus("Read");
+        hitchhikersGuideToTheGalaxy.setGenre("SciFi");
         hitchhikersGuideToTheGalaxy.setBookmark("50");
 
 
@@ -189,6 +191,7 @@ public class MainActivity extends AppCompatActivity {
         braveNewWorld.setAuthor("Aldous Huxley");
         braveNewWorld.setPages("300");
         braveNewWorld.setYear("1950");
+        braveNewWorld.setGenre("SciFi");
         braveNewWorld.setStatus("Want to read");
         braveNewWorld.setBookmark("0");
 
@@ -237,7 +240,7 @@ public class MainActivity extends AppCompatActivity {
         restaurantAtEOU.setGenre("SciFi");
         restaurantAtEOU.setYear("1970");
 
-        BookBuzzDataModel lifeUniverseEverything = new BookBuzzDataModel("Restaurant at the End of the Universe", "ISBN-54586");
+        BookBuzzDataModel lifeUniverseEverything = new BookBuzzDataModel("Life the UNiverse + Everything", "ISBN-54586");
         lifeUniverseEverything.setImage(R.drawable.life_the_universe_and_everything);
         lifeUniverseEverything.setAuthor("Douglas Adams");
         lifeUniverseEverything.setPages("200");
