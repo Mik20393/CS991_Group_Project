@@ -17,6 +17,7 @@ public class ViewNotes extends AppCompatActivity {
     Button homeButton;
     Button viewLibrary;
     Button addNote;
+    Button readHistory;
 
     RecyclerView recyclerView;
     @Override
@@ -45,14 +46,23 @@ public class ViewNotes extends AppCompatActivity {
         });
 
         viewLibrary = findViewById(R.id.myLibraryFromNotebutton2);
+
         viewLibrary.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent viewLibraryButtonIntent = new Intent(ViewNotes.this, ViewLibrary.class);
-                startActivity(viewLibraryButtonIntent);
+                openViewLibrary();
             }
-        });
 
+                });
+
+
+
+        readHistory = findViewById(R.id.view_read_history_button);
+
+        readHistory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {readHistory();}
+        });
 
         addNote = findViewById(R.id.addNoteFromViewNoteButton3);
         addNote.setOnClickListener(new View.OnClickListener() {
@@ -65,5 +75,19 @@ public class ViewNotes extends AppCompatActivity {
             }
         });
 
+
+        }
+    public void openViewLibrary() {
+        Intent intent = new Intent(this, ViewLibrary.class);
+        startActivity(intent);
     }
+
+    public void readHistory(){
+        Intent intent = new Intent(this, ReadHistory.class);
+        startActivity(intent);
+    }
+
+
+
+
 }
